@@ -1,9 +1,15 @@
-console.log('String 1');
+// comment
+/*
+  comment
+comment
+    comment
+*/
+console.log('String 1'); // String
 console.log("false");
 console.log(`String 3`);
-console.log(42.35);
-console.log(5053n);
-console.log(true);
+console.log(42.35); // Number
+console.log(5053n); // BigInt
+console.log(true); // Boolean
 console.log(false);
-console.log(null);
-console.log(undefined);
+console.log(null); // null
+console.log(undefined); // undefined
