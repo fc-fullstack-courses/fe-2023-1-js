@@ -1,19 +1,19 @@
-// console.log((0.1 / 100 + 0.2 / 100) * 100);
-// console.log(100 / 0);
-// console.log(100 / -0);
+// console.log(typeof null);
+/* Math */
+// console.log(270 / 4);
+// console.log(270 % 4);
+// console.log(270 * 4);
+// console.log((-2) ** 2);
 
-// console.log(NaN); // Not a Number
-// console.log(NaN / NaN);
-
-let number1 = 100;
-number1 = '0';
-
-let number2 = 20;
-number2 = '50';
+let counter = 5;
+console.log(counter);
+console.log(++counter);
+console.log(counter);
+console.log(counter++);
+console.log(counter);
 
 
-console.log(0 / 0);
-
-let string1 = '';
-let string2 = true;
-console.log(string1 + string2);
+console.log(+10);
+console.log(-100);
+let value = '0xFF';
+console.log(+value);
