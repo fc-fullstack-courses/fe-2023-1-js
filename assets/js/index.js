@@ -180,3 +180,31 @@ switch (number) {
     console.log('unknown number');
   }
 }
+/*
+  користувач може ввести назву місяця
+
+  за допомогою конструкції switch
+  сказати у якому сезоні цей місяць знаходиться
+  якщо місяця не існує то про це йому потрібно сказати
+*/
+
+const userMonth = prompt('Введіть місяць');
+
+switch (userMonth) {
+  case 'January':
+  case 'February':
+  case 'December': {
+    console.log('Winter');
+    break;
+  }
+  case 'March':
+  case 'May': 
+  case 'April': {
+    console.log('Spring');
+    break;
+  }
+  /* ... для інших місяців */
+  default: {
+    console.log('Incorrect month')
+  }
+}
