@@ -133,28 +133,50 @@ let userAnswer;
 
 // }
 
-let number = +prompt();
+// let number = +prompt();
 
-// кладемо значення змінної
+// // кладемо значення змінної
+// switch (number) {
+//   // описуємо варанти значененя вказаної змінної
+//   // number === case
+//   case 0: {
+//     // що потрібно зробити
+//     alert('Нуль');
+//     break; // потрібно щоб switch не падав далі
+//   }
+//   case 1: {
+//     alert('Один');
+//     break;
+//   }
+//   case 2: {
+//     alert('Два');
+//     break;
+//   }
+//   default: {
+//     // має бути останнім,
+//     // праціює якщо нічого іншого не підійшло
+//     alert('Число не підтримується');
+//   }
+// }
+
+let number = 5;
+
 switch (number) {
-  // описуємо варанти значененя вказаної змінної
-  // number === case
-  case 0: {
-    // що потрібно зробити
-    alert('Нуль');
-    break; // потрібно щоб switch не падав далі
-  }
-  case 1: {
-    alert('Один');
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5: {
+    console.log('small number');
     break;
   }
-  case 2: {
-    alert('Два');
+  case 100:
+  case 101:
+  case 102: {
+    console.log('big number');
     break;
   }
   default: {
-    // має бути останнім, 
-    // праціює якщо нічого іншого не підійшло
-    alert('Число не підтримується');
+    console.log('unknown number');
   }
 }
