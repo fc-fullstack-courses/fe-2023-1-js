@@ -67,39 +67,68 @@ Bonus task
 // }
 
 // 2
-const breadPrice = 23;
-const milkPrice = 40;
-const colaPrice = 42;
+// const breadPrice = 23;
+// const milkPrice = 40;
+// const colaPrice = 42;
 
-const userProduct = prompt('Оберіть ваш товар: хліб, молоко або кола');
-const userProductQuantity = +prompt('Скількі одиниць товару вам потрібно?');
+// const userProduct = prompt('Оберіть ваш товар: хліб, молоко або кола');
+// const userProductQuantity = +prompt('Скількі одиниць товару вам потрібно?');
 
-switch (userProduct) {
-  case 'хліб': {
-    if (userProductQuantity >= 1) {
-      console.log('You pay: ' + userProductQuantity * breadPrice + ' uah');
-    } else {
-      console.log('bad quantity');
-    }
-    break;
+// switch (userProduct) {
+//   case 'хліб': {
+//     if (userProductQuantity >= 1) {
+//       console.log('You pay: ' + userProductQuantity * breadPrice + ' uah');
+//     } else {
+//       console.log('bad quantity');
+//     }
+//     break;
+//   }
+//   case 'молоко': {
+//     if (userProductQuantity >= 1) {
+//       console.log('You pay: ' + userProductQuantity * milkPrice + ' uah');
+//     } else {
+//       console.log('bad quantity');
+//     }
+//     break;
+//   }
+//   case 'кола': {
+//     if (userProductQuantity >= 1) {
+//       console.log('You pay: ' + userProductQuantity * colaPrice + ' uah');
+//     } else {
+//       console.log('bad quantity');
+//     }
+//     break;
+//   }
+//   default: {
+//     console.log('No such product');
+//   }
+// }
+
+const getSumOfTwoNumbers = function (number1, number2) {
+  if (
+    typeof number1 !== 'number' ||
+    typeof number2 !== 'number' ||
+    isNaN(number1) ||
+    isNaN(number2)
+  ) {
+    return null; // потім тут будемо кидати помилку
   }
-  case 'молоко': {
-    if (userProductQuantity >= 1) {
-      console.log('You pay: ' + userProductQuantity * milkPrice + ' uah');
-    } else {
-      console.log('bad quantity');
-    }
-    break;
-  }
-  case 'кола': {
-    if (userProductQuantity >= 1) {
-      console.log('You pay: ' + userProductQuantity * colaPrice + ' uah');
-    } else {
-      console.log('bad quantity');
-    }
-    break;
-  }
-  default: {
-    console.log('No such product');
-  }
-}
+
+  const result = number1 + number2;
+
+  return result;
+};
+
+const res = getSumOfTwoNumbers();
+console.log(res);
+
+// const num1 = +prompt('1');
+// const num2 = +prompt('2');
+
+// const res1 = getSumOfTwoNumbers(num1, num2);
+
+// const phoneMaker = function(color, ram, cpu, hasFrontalCamera) {
+//   // створюємо телефон
+
+//   return 'phone created';
+// }
