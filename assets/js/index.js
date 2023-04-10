@@ -133,8 +133,8 @@ const getSumOfTwoNumbers = function (number1, number2) {
   return null;
 };
 
-const res = getSumOfTwoNumbers();
-console.log(res);
+// const res = getSumOfTwoNumbers();
+// console.log(res);
 
 // const num1 = +prompt('1');
 // const num2 = +prompt('2');
@@ -146,3 +146,41 @@ console.log(res);
 
 //   return 'phone created';
 // }
+
+// зовнішній світ
+// const test = 12345;
+
+// if (true) {
+//   // тонована машина
+//   // const test = false;
+
+//   if (true) {
+//     let test = 'asddfdfdsgsds';
+
+//     console.log(test);
+//   }
+
+//   console.log(test);
+
+// }
+
+// console.log(test);
+
+// const test1 = function () {
+//   var test = 1;
+
+//   console.log(test);
+// }
+
+// test1();
+
+// console.log(test);
+
+var test = 98765;
+
+if (true) {
+  let test = 12345;
+  console.log(test);
+}
+
+console.log(test);
