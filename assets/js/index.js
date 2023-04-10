@@ -29,7 +29,6 @@ const myFunction = function () {
 
 const userInput = 12345;
 
-
 /*
 Завдання на if ... else
 Користувач придбав товар у магазині, у якому діє наступна система знижок: при загальній сумі покупок більше ніж 500 грн. застосовується знижка 5%, а якщо чек більше ніж 1500 то знижка складатиме 10%. Запитайте у користувача ціню його покупки та виведіть йому підсумкову ціну з урахуванням можливої знижки.
@@ -42,27 +41,65 @@ Bonus task
 */
 
 // 1
-const startingPrice = +prompt('Яка сума вашої покупки в грн.?');
-let totalPrice;
-// if(startingPrice >= 500 && startingPrice < 1500) {
-//   // totalPrice = startingPrice * 0.95;
-//   totalPrice = startingPrice - (startingPrice * 0.05);
-// } else if (startingPrice >= 1500) {
+// const startingPrice = +prompt('Яка сума вашої покупки в грн.?');
+// let totalPrice;
+// // if(startingPrice >= 500 && startingPrice < 1500) {
+// //   // totalPrice = startingPrice * 0.95;
+// //   totalPrice = startingPrice - (startingPrice * 0.05);
+// // } else if (startingPrice >= 1500) {
+// //   totalPrice = startingPrice - (startingPrice * 0.1);
+// // } else {
+// //   totalPrice = startingPrice;
+// // }
+
+// if(startingPrice >= 1500) {
 //   totalPrice = startingPrice - (startingPrice * 0.1);
-// } else {
+// } else if (startingPrice >= 500) {
+//   totalPrice = startingPrice - (startingPrice * 0.05);
+// } else if (startingPrice >= 0) {
 //   totalPrice = startingPrice;
 // }
 
-if(startingPrice >= 1500) {
-  totalPrice = startingPrice - (startingPrice * 0.1);
-} else if (startingPrice >= 500) {
-  totalPrice = startingPrice - (startingPrice * 0.05);
-} else if (startingPrice >= 0) {
-  totalPrice = startingPrice;
-} 
+// if(totalPrice > 0) {
+//   alert('Vy zaplatuly: '+ totalPrice + ' uah');
+// } else {
+//   alert('Помилкове введення');
+// }
 
-if(totalPrice > 0) {
-  alert('Vy zaplatuly: '+ totalPrice + ' uah');
-} else {
-  alert('Помилкове введення');
+// 2
+const breadPrice = 23;
+const milkPrice = 40;
+const colaPrice = 42;
+
+const userProduct = prompt('Оберіть ваш товар: хліб, молоко або кола');
+const userProductQuantity = +prompt('Скількі одиниць товару вам потрібно?');
+
+switch (userProduct) {
+  case 'хліб': {
+    if (userProductQuantity >= 1) {
+      console.log('You pay: ' + userProductQuantity * breadPrice + ' uah');
+    } else {
+      console.log('bad quantity');
+    }
+    break;
+  }
+  case 'молоко': {
+    if (userProductQuantity >= 1) {
+      console.log('You pay: ' + userProductQuantity * milkPrice + ' uah');
+    } else {
+      console.log('bad quantity');
+    }
+    break;
+  }
+  case 'кола': {
+    if (userProductQuantity >= 1) {
+      console.log('You pay: ' + userProductQuantity * colaPrice + ' uah');
+    } else {
+      console.log('bad quantity');
+    }
+    break;
+  }
+  default: {
+    console.log('No such product');
+  }
 }
