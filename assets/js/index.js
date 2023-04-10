@@ -1,34 +1,3 @@
-// alert
-// prompt
-// console.log
-
-// alert('parameter'); // функція з параметром
-
-// functional expression - функціональний вираз
-const myFunction = function () {
-  // тіло функціі - виконуюєтьс коли функцію запускають
-
-  const userInput = prompt('Введіть ваше ім`я');
-
-  const greetingText = 'Hello ' + userInput;
-
-  console.log(greetingText);
-
-  // повертаємо дані з функції
-  // завершує роботу функції
-  return greetingText;
-
-  // тут нічого не буде працювати
-  alert('test');
-};
-
-// let test = myFunction();
-// console.log(test);
-// myFunction();
-// myFunction();
-
-const userInput = 12345;
-
 /*
 Завдання на if ... else
 Користувач придбав товар у магазині, у якому діє наступна система знижок: при загальній сумі покупок більше ніж 500 грн. застосовується знижка 5%, а якщо чек більше ніж 1500 то знижка складатиме 10%. Запитайте у користувача ціню його покупки та виведіть йому підсумкову ціну з урахуванням можливої знижки.
@@ -104,6 +73,12 @@ Bonus task
 //   }
 // }
 
+/**
+ * Функція складання двох чисел
+ * @param {number} number1 перше число, яке не є NaN-ом
+ * @param {number} number2 друге число, яке не є NaN-ом
+ * @returns {number | null} сума двох чисел
+ */
 const getSumOfTwoNumbers = function (number1, number2) {
   // if (
   //   typeof number1 !== 'number' ||
@@ -132,6 +107,8 @@ const getSumOfTwoNumbers = function (number1, number2) {
   // якщо ми тут то все погано
   return null;
 };
+
+// getSumOfTwoNumbers(5,10);
 
 // const res = getSumOfTwoNumbers();
 // console.log(res);
