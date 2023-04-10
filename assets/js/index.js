@@ -105,18 +105,32 @@ Bonus task
 // }
 
 const getSumOfTwoNumbers = function (number1, number2) {
+  // if (
+  //   typeof number1 !== 'number' ||
+  //   typeof number2 !== 'number' ||
+  //   isNaN(number1) ||
+  //   isNaN(number2)
+  // ) {
+  //   return null; // потім тут будемо кидати помилку
+  // }
+
+  // const result = number1 + number2;
+
+  // return result;
+
   if (
-    typeof number1 !== 'number' ||
-    typeof number2 !== 'number' ||
-    isNaN(number1) ||
-    isNaN(number2)
+    typeof number1 === 'number' &&
+    typeof number2 === 'number' &&
+    !isNaN(number1) &&
+    !isNaN(number2)
   ) {
-    return null; // потім тут будемо кидати помилку
+    const result = number1 + number2;
+
+    return result;
   }
 
-  const result = number1 + number2;
-
-  return result;
+  // якщо ми тут то все погано
+  return null;
 };
 
 const res = getSumOfTwoNumbers();
