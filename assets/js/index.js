@@ -165,5 +165,46 @@ console.log(test);
 /*
   1 створити функцію, яка буде повертати найбільше число з двох
   2* створити функцію яка приймає число та перевіряє його на парність (четность)
-  
 */
+/**
+ * @param {number} num1
+ * @param {number} num2
+ * @returns {number | null}
+ */
+const findBiggestNumber = function (num1, num2) {
+  if (
+    typeof num1 !== 'number' ||
+    typeof num2 !== 'number' ||
+    isNaN(num1 - num2)
+  ) {
+    return null;
+  }
+
+  if (num1 > num2) {
+    return num1;
+  }
+  return num2;
+};
+
+const isEven = function (num) {
+  if (typeof num !== 'number' || isNaN(num)) {
+    return null;
+  }
+
+  // if (num % 2 === 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+
+  return num % 2 === 0;
+};
+
+const result1 = isEven(1.5);
+
+// if (result1) {
+//   // якщо парне
+//   alert('Ви перемогли');
+// } else {
+//   alert('Ви програли');
+// }
