@@ -188,23 +188,71 @@ switch (number) {
   якщо місяця не існує то про це йому потрібно сказати
 */
 
-const userMonth = prompt('Введіть місяць');
+// const userMonth = prompt('Введіть місяць');
 
-switch (userMonth) {
-  case 'January':
-  case 'February':
-  case 'December': {
-    console.log('Winter');
-    break;
-  }
-  case 'March':
-  case 'May': 
-  case 'April': {
-    console.log('Spring');
-    break;
-  }
-  /* ... для інших місяців */
-  default: {
-    console.log('Incorrect month')
-  }
-}
+// switch (userMonth) {
+//   case 'January':
+//   case 'February':
+//   case 'December': {
+//     console.log('Winter');
+//     break;
+//   }
+//   case 'March':
+//   case 'May':
+//   case 'April': {
+//     console.log('Spring');
+//     break;
+//   }
+//   /* ... для інших місяців */
+//   default: {
+//     console.log('Incorrect month')
+//   }
+// }
+
+let username = 'Test';
+
+// if (username !== 'Test') {
+//   // 1
+//   console.log('Ви реальна людина');
+// } else {
+//   // 2
+//   console.log('Ви тестові дані');
+// }
+
+// умова ? результатПриІстині : результатПриБрехні
+
+// username !== 'Test' ? console.log('Ви реальна людина') : console.log('Ви тестові дані');
+
+// let value;
+
+// if(5 > 3) {
+//   value = 5;
+// } else {
+//   value = 100;
+// }
+
+let value = 5 > 3 ? 5 : 100;
+
+const findSmallestNumber = function (num1, num2) {
+  // if (num1 < num2) {
+  //   return num1;
+  // } else {
+  //   return num2;
+  // }
+
+  return num1 < num2 ? num1 : num2;
+};
+
+// let answer;
+
+// if (username !== 'Test') {
+//   // 1
+//   // console.log('Ви реальна людина');
+//   answer = 'Ви реальна людина';
+// } else {
+//   // 2
+//   // console.log('Ви тестові дані');
+//   answer = 'Ви тестові дані';
+// }
+
+console.log(username !== 'Test' ? 'Ви реальна людина' : 'Ви тестові дані');
