@@ -42,11 +42,31 @@ let counter = 0;
 //   console.log(counter);
 // }
 
-do {
-  // одна гарантована ітерація
-  counter++;
-  // if(counter % 2 !== 0) {
-  //   continue; // достроково перейти на наступну ітерацію
-  // }
+// do {
+//   // одна гарантована ітерація
+//   counter++;
+//   // if(counter % 2 !== 0) {
+//   //   continue; // достроково перейти на наступну ітерацію
+//   // }
+//   console.log(counter);
+// } while(false)
+
+// for ( ініціалізація ; умова ; крок ) {
+
+// }
+
+// for (let counter = 0; counter <= 10; counter++) {
+//   //
+//   // if (counter % 2 === 0) {
+//   //   console.log(counter);
+//   // }
+
+//   // if (counter % 2 !== 0) {
+//   //   continue;
+//   // }
+//   // console.log(counter);
+// }
+
+for (let counter = 0; counter <= 10; counter+=2) {
   console.log(counter);
-} while(false)
+}
