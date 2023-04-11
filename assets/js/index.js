@@ -34,13 +34,19 @@ let counter = 0;
 
 //   counter += 2;
 // }
-while (counter <= 10) {
+// while (counter <= 10) {
+//   counter++;
+//   if(counter % 2 !== 0) {
+//     continue; // достроково перейти на наступну ітерацію
+//   }
+//   console.log(counter);
+// }
+
+do {
+  // одна гарантована ітерація
   counter++;
-
-  if(counter % 2 !== 0) {
-    continue; // достроково перейти на наступну ітерацію
-  }
-
+  // if(counter % 2 !== 0) {
+  //   continue; // достроково перейти на наступну ітерацію
+  // }
   console.log(counter);
-
-}
+} while(false)
