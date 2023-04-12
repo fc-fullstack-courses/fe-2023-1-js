@@ -68,3 +68,28 @@ cat.isMale = true;
 delete cat.isMale;
 cat.isSleeping = undefined;
 
+const Cat = function (nickname, breed, color, age, weight, isSleeping) {
+  // debugger;
+
+  this.name = nickname;
+  this.breed = breed;
+  this.color = color;
+  this.age = age;
+  this.weight = weight;
+  this.isSleeping = isSleeping;
+
+  this.meow = function () {
+    console.log('meow')
+  }
+};
+
+const constructedCat = new Cat(
+  'Test',
+  'Test breed',
+  'transparent',
+  -5,
+  0,
+  false
+);
+
+const constructedCat2 = Cat('Test 2', 'Test breed 1', 'transparent 1',213, 1230, true);
