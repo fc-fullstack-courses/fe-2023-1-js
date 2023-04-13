@@ -208,3 +208,22 @@ const result1 = isEven(1.5);
 // } else {
 //   alert('Ви програли');
 // }
+
+// console.log(test1);
+
+// let test1 = 12354;
+
+// const res1 = sum1(12,24);
+const res2 = sum2(12,24);
+
+// functional expression
+const sum1 = function (num1, num2) {
+  return num1 + num2;
+};
+
+// functional declaration
+function sum2(num1, num2) {
+  return num1 + num2;
+}
+
+// arrow function
