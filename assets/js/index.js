@@ -135,3 +135,20 @@ const user1 = new User('Петро', 'Іваненко', true, 30);
 console.log(user1.fullName()); // 'Петро Іваненко'
 
 user1.speak(); // 'Hello, my name is Петро Іваненко.'
+
+let a = 10;
+let b = 15;
+/*
+  a + b = x
+
+  10 + 15 = 25
+*/
+
+// const text = 'Глава 1\nІм\'я користувача \\';
+
+// alert(text)
+// alert(`Глава 1
+// Ім'я користувача \\`);
+
+// alert(a + ' + ' + b + ' = ' + (a + b) );
+alert(`${a} + ${b} = ${a + b}`);
