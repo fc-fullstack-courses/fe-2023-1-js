@@ -45,11 +45,11 @@ const cat = {
 };
 
 // читання даних з ооб'єктів
-console.log(cat);
+// console.log(cat);
 
 // alert(cat);
 
-console.log('Коту ' + cat.nickname + ' ' + cat.age + ' років');
+// console.log('Коту ' + cat.nickname + ' ' + cat.age + ' років');
 
 // зміна властивостей об'єкта
 let age = 5;
@@ -132,9 +132,9 @@ const User = function (firstName, lastName, isMale, age) {
 
 const user1 = new User('Петро', 'Іваненко', true, 30);
 
-console.log(user1.fullName()); // 'Петро Іваненко'
+// console.log(user1.fullName()); // 'Петро Іваненко'
 
-user1.speak(); // 'Hello, my name is Петро Іваненко.'
+// user1.speak(); // 'Hello, my name is Петро Іваненко.'
 
 let a = 10;
 let b = 15;
@@ -175,7 +175,7 @@ const user2 = {
 */
 
 function greetUser(user) {
-  if(typeof user !== "object") {
+  if (typeof user !== 'object') {
     return `Hello, Guest`;
   }
   return `Hello, ${user.firstName} ${user.lastName}!`;
@@ -186,3 +186,28 @@ const greeting2 = greetUser(user2);
 
 // alert(greeting1);
 // console.log(greeting1);
+
+const testObject = {
+  100: 'secret text',
+  abc: true,
+  'some text': 525252,
+};
+
+// console.log(testObject);
+// console.log(testObject.100);
+
+// console.log(testObject[100]);
+// console.log(testObject['100']);
+
+// console.log(testObject['abc']);
+// console.log(testObject['some text']);
+
+const myKey = 'some text';
+
+console.log(testObject[50 + 50]);
+
+// const userKey = prompt('Введіть назву ключу');
+// const userValue = prompt('Введіть значення');
+
+// testObject[userKey] = userValue;
+// // testObject.promptValue = userValue;
