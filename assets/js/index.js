@@ -151,4 +151,38 @@ let b = 15;
 // Ім'я користувача \\`);
 
 // alert(a + ' + ' + b + ' = ' + (a + b) );
-alert(`${a} + ${b} = ${a + b}`);
+// alert(`${a} + ${b} = ${a + b}`);
+
+const user = {
+  firstName: 'Test',
+  lastName: 'Testenko',
+  age: 125,
+  isMale: true,
+};
+const user2 = {
+  firstName: 'Null',
+  lastName: 'Undefinovich',
+  age: 500,
+  isMale: true,
+};
+
+// const text = greeting()
+// console.log(text);
+
+/*
+  створити функцію яка буде вітати користувача
+  структура об'єкту користувача наведена вище
+*/
+
+function greetUser(user) {
+  if(typeof user !== "object") {
+    return `Hello, Guest`;
+  }
+  return `Hello, ${user.firstName} ${user.lastName}!`;
+}
+
+const greeting1 = greetUser(user);
+const greeting2 = greetUser(user2);
+
+// alert(greeting1);
+// console.log(greeting1);
