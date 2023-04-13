@@ -79,8 +79,8 @@ const Cat = function (nickname, breed, color, age, weight, isSleeping) {
   this.isSleeping = isSleeping;
 
   this.meow = function () {
-    console.log('meow')
-  }
+    console.log('meow');
+  };
 };
 
 const constructedCat = new Cat(
@@ -92,7 +92,14 @@ const constructedCat = new Cat(
   false
 );
 
-const constructedCat2 = Cat('Test 2', 'Test breed 1', 'transparent 1',213, 1230, true);
+const constructedCat2 = Cat(
+  'Test 2',
+  'Test breed 1',
+  'transparent 1',
+  213,
+  1230,
+  true
+);
 
 /*
   створити функцію конструктор для об'єктів користувачів
@@ -107,3 +114,24 @@ const constructedCat2 = Cat('Test 2', 'Test breed 1', 'transparent 1',213, 1230,
   (Петро Іваненко)
 
 */
+
+const User = function (firstName, lastName, isMale, age) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.isMale = isMale;
+  this.age = age;
+
+  this.fullName = function () {
+    return this.firstName + ' ' + this.lastName;
+  };
+
+  this.speak = function () {
+    return 'Hello, my name is ' + this.fullName() + '.';
+  };
+};
+
+const user1 = new User('Петро', 'Іваненко', true, 30);
+
+console.log(user1.fullName()); // 'Петро Іваненко'
+
+user1.speak(); // 'Hello, my name is Петро Іваненко.'
