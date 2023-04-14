@@ -41,3 +41,14 @@ names.unshift('Test 2', 'Test 3');
 
 // видаляє елемент з початку масиву
 const deletedName2 = names.shift();
+
+
+// звідки починати видаляти (індекс в масиві)
+// const holidayTeam = names.splice(7);
+// const holidayTeam = names.splice(-4);
+
+// скільки видалити
+// const soloHoliday = names.splice(-4, 1);
+
+// після видалення додати ще значень
+const soloHoliday = names.splice(-4, 0, 'New 1', 'New 2', 'New 3');
