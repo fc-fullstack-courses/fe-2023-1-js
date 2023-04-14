@@ -28,3 +28,9 @@ names.push('Kyrylo');
 names.push('Andriy');
 
 names.push('Natalka', 'Taras', 'John');
+
+const deletedName = names.pop();
+
+// names.pop();
+// names.pop();
+// names.pop();
