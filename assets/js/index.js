@@ -232,14 +232,14 @@ const testObject = {
 // console.log(name1 === name2);
 
 const user1 = {
-  name : 'Anton',
-  age: 12
-}
+  name: 'Anton',
+  age: 12,
+};
 
 const user2 = {
-  name : 'Anton',
-  age: 12
-}
+  name: 'Anton',
+  age: 12,
+};
 
 const user3 = user1;
 
@@ -248,3 +248,10 @@ console.log(user1 == user2);
 console.log(user1 === user3);
 
 user3.age = 50;
+
+// синтаксичний цукром
+const newObj = {
+  test: 12345,
+};
+
+const newObj2 = new Object({ test: 12345 });
