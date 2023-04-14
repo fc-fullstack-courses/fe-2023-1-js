@@ -153,17 +153,13 @@ let b = 15;
 // alert(a + ' + ' + b + ' = ' + (a + b) );
 // alert(`${a} + ${b} = ${a + b}`);
 
-const user = {
-  firstName: 'Test',
-  lastName: 'Testenko',
-  age: 125,
-  isMale: true,
-};
 const user2 = {
   firstName: 'Null',
   lastName: 'Undefinovich',
   age: 500,
   isMale: true,
+  'asdsaffff sadsfdgggfdgdgsgsa': 'bad name',
+  1002: 'potentially bad',
 };
 
 // const text = greeting()
@@ -181,7 +177,7 @@ function greetUser(user) {
   return `Hello, ${user.firstName} ${user.lastName}!`;
 }
 
-const greeting1 = greetUser(user);
+// const greeting1 = greetUser(user);
 const greeting2 = greetUser(user2);
 
 // alert(greeting1);
@@ -202,12 +198,30 @@ const testObject = {
 // console.log(testObject['abc']);
 // console.log(testObject['some text']);
 
-const myKey = 'some text';
+// const myKey = 'some text';
 
-console.log(testObject[50 + 50]);
+// console.log(testObject[50 + 50]);
 
 // const userKey = prompt('Введіть назву ключу');
 // const userValue = prompt('Введіть значення');
 
 // testObject[userKey] = userValue;
 // // testObject.promptValue = userValue;
+
+const user = {
+  firstName: 'Test',
+  lastName: 'Testenko',
+  age: 125,
+  isMale: true,
+};
+
+console.log(user);
+// console.log(user[field]);
+
+let field = 'age';
+user[field] = false;
+user.age = false;
+
+// alert()
+// window.alert()
+// window['alert']()
