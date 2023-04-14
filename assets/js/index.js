@@ -34,3 +34,10 @@ const deletedName = names.pop();
 // names.pop();
 // names.pop();
 // names.pop();
+
+// додає до початку масиву 
+names.unshift('Test');
+names.unshift('Test 2', 'Test 3');
+
+// видаляє елемент з початку масиву
+const deletedName2 = names.shift();
