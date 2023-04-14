@@ -19,14 +19,12 @@ const userEmailsArr = new Array(
 // console.log(userEmails);
 // console.log(userEmailsArr);
 
-
 // Array.isArray(userEmailsArr)
 
-const names = [
-  'Anton',
-  'Victoria',
-  'Maxim',
-  'Oleg',
-  'Tetiana',
-];
+const names = ['Anton', 'Victoria', 'Maxim', 'Oleg', 'Tetiana'];
 
+names.push('Kyrylo');
+
+names.push('Andriy');
+
+names.push('Natalka', 'Taras', 'John');
