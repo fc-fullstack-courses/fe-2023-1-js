@@ -130,7 +130,7 @@ const User = function (firstName, lastName, isMale, age) {
   };
 };
 
-const user1 = new User('Петро', 'Іваненко', true, 30);
+// const user1 = new User('Петро', 'Іваненко', true, 30);
 
 // console.log(user1.fullName()); // 'Петро Іваненко'
 
@@ -153,14 +153,14 @@ let b = 15;
 // alert(a + ' + ' + b + ' = ' + (a + b) );
 // alert(`${a} + ${b} = ${a + b}`);
 
-const user2 = {
-  firstName: 'Null',
-  lastName: 'Undefinovich',
-  age: 500,
-  isMale: true,
-  'asdsaffff sadsfdgggfdgdgsgsa': 'bad name',
-  1002: 'potentially bad',
-};
+// const user2 = {
+//   firstName: 'Null',
+//   lastName: 'Undefinovich',
+//   age: 500,
+//   isMale: true,
+//   'asdsaffff sadsfdgggfdgdgsgsa': 'bad name',
+//   1002: 'potentially bad',
+// };
 
 // const text = greeting()
 // console.log(text);
@@ -178,7 +178,7 @@ function greetUser(user) {
 }
 
 // const greeting1 = greetUser(user);
-const greeting2 = greetUser(user2);
+// const greeting2 = greetUser(user2);
 
 // alert(greeting1);
 // console.log(greeting1);
@@ -208,20 +208,43 @@ const testObject = {
 // testObject[userKey] = userValue;
 // // testObject.promptValue = userValue;
 
-const user = {
-  firstName: 'Test',
-  lastName: 'Testenko',
-  age: 125,
-  isMale: true,
-};
+// const user = {
+//   firstName: 'Test',
+//   lastName: 'Testenko',
+//   age: 125,
+//   isMale: true,
+// };
 
-console.log(user);
-// console.log(user[field]);
+// console.log(user);
+// // console.log(user[field]);
 
-let field = 'age';
-user[field] = false;
-user.age = false;
+// let field = 'age';
+// user[field] = false;
+// user.age = false;
 
 // alert()
 // window.alert()
 // window['alert']()
+
+// const name1 = 'Anton';
+// const name2 = 'Anton';
+
+// console.log(name1 === name2);
+
+const user1 = {
+  name : 'Anton',
+  age: 12
+}
+
+const user2 = {
+  name : 'Anton',
+  age: 12
+}
+
+const user3 = user1;
+
+console.log(user1 == user2);
+
+console.log(user1 === user3);
+
+user3.age = 50;
