@@ -84,4 +84,13 @@ const isAntonInArray = names.includes('Anton');
 const isAbracadabraInArray = names.includes('Abracadabra');
 
 // розвертає порядок елементів в масиві
-names.reverse()
+names.reverse();
+
+const everest = [1, 2, 3, [4, 5, 6], 7, 8, [9, 10, [11, 12, [13]]]];
+
+// стоврє новий масив, я якому розрівнює 
+// певну кількість рівнів підмассивів
+const everest1 = everest.flat(1);
+
+const everest2 = everest.flat(5);
+const everest3 = everest.flat(Infinity);
