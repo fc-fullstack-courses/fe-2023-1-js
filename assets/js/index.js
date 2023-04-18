@@ -94,3 +94,9 @@ const everest1 = everest.flat(1);
 
 const everest2 = everest.flat(5);
 const everest3 = everest.flat(Infinity);
+
+// створює на осонві масиву стрінгу
+const namesString1 = names.join(); 
+
+// вказати розділювач між елементами масиву
+const namesString2 = names.join(' -|- '); 
