@@ -115,3 +115,30 @@ function sortingFunction(currentValue, nextValue) {
 }
 
 everest3.sort(sortingFunction);
+
+// for (let i = 0; i < names.length; i++) {
+//   console.log(names[i]);
+// }
+
+function logNames(value, i, arr) {
+  // console.log(`========START=========`);
+  console.log(`${value} Test`);
+  // console.log(i);
+  // console.log(arr);
+  // console.log(`========END=========`);
+}
+
+// names.forEach(logNames);
+
+const numbers = [1, 2, 5, 8, 25, 13];
+
+// function square(number) {
+//   console.log(number * number);
+// }
+
+// numbers.forEach(square);
+
+numbers.forEach(function (number) {
+  console.log(number * number);
+});
+
