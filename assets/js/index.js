@@ -21,7 +21,7 @@ const userEmailsArr = new Array(
 
 // Array.isArray(userEmailsArr)
 
-const names = ['Anton', 'Victoria', 'Maxim', 'Oleg', 'Tetiana', 50, userEmails];
+const names = ['Anton', 'Victoria', 'Maxim', 'Oleg', 'Tetiana'];
 
 names.push('Kyrylo');
 
@@ -67,3 +67,13 @@ const copy3 = names.slice(3, 7);
 */
 const solution1 = names.slice(0, names.length / 2);
 
+// новий масив на базі names з двома новими значеннями в кінці
+const concated1 = names.concat('Concated', 'Concated 2');
+
+// при конкатенації масиву конкат переносить у новий масив
+// дані з масиву-параметру
+const concated2 = names.concat(
+  'Not array',
+  ['Name', 'Name2', 'Name 3', [1, 2, 3]],
+  'Not array'
+);
