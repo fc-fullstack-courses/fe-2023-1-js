@@ -215,7 +215,7 @@ const result1 = isEven(1.5);
 // let test1 = 12354;
 
 // const res1 = sum1(12,24);
-const res2 = sum2(12,24);
+const res2 = sum2(12, 24);
 
 // functional expression
 const sum1 = function (num1, num2) {
@@ -228,3 +228,30 @@ function sum2(num1, num2) {
 }
 
 // arrow function
+
+// high order function (HOF)
+/**
+ * @param {number} value1
+ * @param {number} value2
+ * @param {Function} callback
+ */
+function highOrderFunction(value1, value2, callback) {
+  // debugger;
+
+  callback(value1, value2);
+}
+
+function sum(num1, num2) {
+  return num1 + num2;
+}
+
+// highOrderFunction(2, 2, console.log);
+highOrderFunction(2, 2, sum);
+
+function highOrderFunction2() {
+  // debugger;
+
+  return function () {};
+}
+
+const func = highOrderFunction2();
