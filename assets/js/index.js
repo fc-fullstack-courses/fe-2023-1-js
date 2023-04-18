@@ -77,3 +77,8 @@ const concated2 = names.concat(
   ['Name', 'Name2', 'Name 3', [1, 2, 3]],
   'Not array'
 );
+
+// шукає елемент в масиві і овертає вулеву відповідь
+// про його наявність
+const isAntonInArray = names.includes('Anton');
+const isAbracadabraInArray = names.includes('Abracadabra');
