@@ -82,3 +82,6 @@ const concated2 = names.concat(
 // про його наявність
 const isAntonInArray = names.includes('Anton');
 const isAbracadabraInArray = names.includes('Abracadabra');
+
+// розвертає порядок елементів в масиві
+names.reverse()
