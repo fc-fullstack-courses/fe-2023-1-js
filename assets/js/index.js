@@ -21,7 +21,7 @@ const userEmailsArr = new Array(
 
 // Array.isArray(userEmailsArr)
 
-const names = ['Anton', 'Victoria', 'Maxim', 'Oleg', 'Tetiana'];
+const names = ['Anton', 'Victoria', 'Maxim', 'Oleg', 'Tetiana', 50, userEmails];
 
 names.push('Kyrylo');
 
@@ -30,18 +30,18 @@ names.push('Andriy');
 names.push('Natalka', 'Taras', 'John');
 
 const deletedName = names.pop();
+names.pop();
 
 // names.pop();
 // names.pop();
 // names.pop();
 
-// додає до початку масиву 
+// додає до початку масиву
 names.unshift('Test');
 names.unshift('Test 2', 'Test 3');
 
 // видаляє елемент з початку масиву
 const deletedName2 = names.shift();
-
 
 // звідки починати видаляти (індекс в масиві)
 // const holidayTeam = names.splice(7);
@@ -52,3 +52,18 @@ const deletedName2 = names.shift();
 
 // після видалення додати ще значень
 const soloHoliday = names.splice(-4, 0, 'New 1', 'New 2', 'New 3');
+
+// створиту повну копію старого масиву
+// const copy1 = names.slice();
+
+// скопіювати з 3 елемента і до кінця
+const copy2 = names.slice(3);
+
+// скопіювати з 3 елемента і до 7 не включно
+const copy3 = names.slice(3, 7);
+
+/*
+  Скопіюйте у нову змінну першу половину існуючого масиву
+*/
+const solution1 = names.slice(0, names.length / 2);
+
