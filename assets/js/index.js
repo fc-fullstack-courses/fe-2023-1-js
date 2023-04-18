@@ -86,9 +86,9 @@ const isAbracadabraInArray = names.includes('Abracadabra');
 // розвертає порядок елементів в масиві
 names.reverse();
 
-const everest = [1, 2, 3, [4, 5, 6], 7, 8, [9, 10, [11, 12, [13]]]];
+const everest = [1, -2, 3, [4, 5, 6], 7, 8, [9, 10, [11, 12, [13]]]];
 
-// стоврє новий масив, я якому розрівнює 
+// стоврє новий масив, я якому розрівнює
 // певну кількість рівнів підмассивів
 const everest1 = everest.flat(1);
 
@@ -96,7 +96,22 @@ const everest2 = everest.flat(5);
 const everest3 = everest.flat(Infinity);
 
 // створює на осонві масиву стрінгу
-const namesString1 = names.join(); 
+const namesString1 = names.join();
 
 // вказати розділювач між елементами масиву
-const namesString2 = names.join(' -|- '); 
+const namesString2 = names.join(' -|- ');
+
+// сортування масиву
+names.sort();
+
+function sortingFunction(currentValue, nextValue) {
+  if (currentValue > nextValue) {
+    // сортуємо так щоб nextValue йшов попереду
+    return 1;
+  } else {
+    // сортуємо так щоб nextValue йшов позаду
+    return -1;
+  }
+}
+
+everest3.sort(sortingFunction);
