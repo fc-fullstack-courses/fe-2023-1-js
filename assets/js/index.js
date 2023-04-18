@@ -142,3 +142,8 @@ numbers.forEach(function (number) {
   console.log(number * number);
 });
 
+function mapCallback(number) {
+  return number * number;
+}
+
+const squaredNumbers = numbers.map(mapCallback);
