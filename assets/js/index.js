@@ -4,9 +4,6 @@ function User(name, age, isMale) {
   this.isMale = isMale;
 }
 
-const user1 = new User('First User', 50, true);
-const user2 = new User('Second User', 34, false);
-
 const arr1 = [123];
 // const arr2 = ['asdsadsa'];
 
@@ -31,5 +28,9 @@ const userPrototypeProtype = {
 
 userPrototype.__proto__ = userPrototypeProtype;
 user0.__proto__ = userPrototype;
-user1.__proto__ = userPrototype;
+// user1.__proto__ = userPrototype;
 
+User.prototype = userPrototype;
+
+const user1 = new User('First User', 50, true);
+const user2 = new User('Second User', 34, false);
