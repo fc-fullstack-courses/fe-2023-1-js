@@ -147,3 +147,18 @@ function mapCallback(number) {
 }
 
 const squaredNumbers = numbers.map(mapCallback);
+
+const allNumbers = [2, 4, 7, 9, 11, 50, 625, 30, 42];
+
+function isOdd(number, i, arr) {
+  // if(number % 2 !== 0) {
+  //   return true;
+  // }
+  // return false;
+  return number % 2 !== 0;
+}
+
+const oddNumbers = allNumbers.filter(isOdd);
+const evenNumbers = allNumbers.filter(function (number) {
+  return number % 2 === 0;
+});
