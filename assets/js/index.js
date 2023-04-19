@@ -171,12 +171,42 @@ const index = allNumbers.findIndex(function (number) {
   return number > 3000000000000000000;
 });
 
-const is7There = allNumbers.some(function(number){
-
+const is7There = allNumbers.some(function (number) {
   return number === 74545345345345345;
 });
 
-const isPositive = allNumbers.every(function(number) {
-  return number >=0;
+const isPositive = allNumbers.every(function (number) {
+  return number >= 0;
 });
 
+function User(firstName, lastName, email, age, isMale, isSubscribed) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.email = email;
+  this.age = age;
+  this.isMale = isMale;
+  this.isSubscribed = isSubscribed;
+}
+
+// const user1 = new User('Test', 'Testenko', 'email@mail.com', 42, true, false);
+
+function createUsers(amount) {
+  const usersArray = [];
+
+  for (let i = 0; i < amount; i++) {
+    const user = new User(
+      `Name${i}`,
+      `LastName${i}`,
+      `email${i}@mail.com`,
+      Math.round(Math.random() * 100),
+      Math.random() > 0.5,
+      Math.random() > 0.5
+    );
+
+    usersArray.push(user);
+  }
+
+  return usersArray;
+}
+
+const userArray1 = createUsers(100);
