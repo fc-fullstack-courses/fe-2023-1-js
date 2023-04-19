@@ -148,7 +148,7 @@ function mapCallback(number) {
 
 const squaredNumbers = numbers.map(mapCallback);
 
-const allNumbers = [2, 4, 7, 9, 11, 50, 625, 30, 42];
+const allNumbers = [2, 4, 7, 9, 11, 50, -625, 30, 42];
 
 function isOdd(number, i, arr) {
   // if(number % 2 !== 0) {
@@ -170,3 +170,13 @@ const foundValue = allNumbers.find(function (number, i, arr) {
 const index = allNumbers.findIndex(function (number) {
   return number > 3000000000000000000;
 });
+
+const is7There = allNumbers.some(function(number){
+
+  return number === 74545345345345345;
+});
+
+const isPositive = allNumbers.every(function(number) {
+  return number >=0;
+});
+
