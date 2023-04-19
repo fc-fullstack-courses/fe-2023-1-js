@@ -162,3 +162,11 @@ const oddNumbers = allNumbers.filter(isOdd);
 const evenNumbers = allNumbers.filter(function (number) {
   return number % 2 === 0;
 });
+
+const foundValue = allNumbers.find(function (number, i, arr) {
+  return number === 11;
+});
+
+const index = allNumbers.findIndex(function (number) {
+  return number > 3000000000000000000;
+});
