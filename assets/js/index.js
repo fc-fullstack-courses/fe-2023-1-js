@@ -108,3 +108,44 @@ Phone.prototype = phonePrototype;
 
 const phone1 = new Phone('phone', 12354, 'brand');
 
+/*
+
+  створити функцію конструктор Ladder
+  у Ladder е властивість currentStep
+
+  у об'єктів сходинок є методи
+  up - підіймаємося на одну сходинку
+  down - спускаємося на одну сходинку
+  showStep - показує на якій сходинці ми знаходимось
+
+  зробити завдання з використанням прототипів
+
+*/
+
+function Ladder(maxSteps) {
+  this.currentStep = 0;
+  this.maxSteps = maxSteps;
+}
+
+const ladderProto = {
+  up: function () {
+    if (this.currentStep < this.maxSteps) {
+      this.currentStep++;
+    }
+    return this.currentStep;
+  },
+  down: function () {
+    if (this.currentStep > 0) {
+      this.currentStep--;
+    }
+
+    return this.currentStep;
+  },
+  showStep: function () {
+    return this.currentStep;
+  },
+};
+
+Ladder.prototype = ladderProto;
+
+const ladder1 = new Ladder(5);
