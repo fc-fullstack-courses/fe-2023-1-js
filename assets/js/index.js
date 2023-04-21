@@ -137,9 +137,10 @@ const ladderProto = {
   down: function () {
     if (this.currentStep > 0) {
       this.currentStep--;
+      return this.currentStep;
     }
 
-    return this.currentStep;
+    throw new RangeError('Не можемо ступати нижче');
   },
   showStep: function () {
     return this.currentStep;
@@ -149,3 +150,10 @@ const ladderProto = {
 Ladder.prototype = ladderProto;
 
 const ladder1 = new Ladder(5);
+
+try {
+  ladder1.up();
+  ladder1.down();
+} catch (err) {
+  console.log(err.message);
+}
