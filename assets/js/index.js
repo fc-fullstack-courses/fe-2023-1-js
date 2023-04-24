@@ -31,13 +31,37 @@ const stringsArr = fixedString.split('');
 const testString = 'Word antoher       test 12345. X23';
 const stringsArr2 = testString.split(' ');
 
-function betterTrim (str) {
+function betterTrim(str) {
   const words = str.split(' ');
 
-  const filteredWords = words.filter(function(word) {
+  const filteredWords = words.filter(function (word) {
     return word !== '';
   });
 
   const trimmedString = filteredWords.join(' ');
   return trimmedString;
+}
+
+/*
+  Створити функцію яка приймає рядок
+  і повертає нову версію цього рядка,
+  у якому у кожного символу буде випадковий регістр
+*/
+/**
+ * @param {string} str
+ * @returns {string}
+ */
+function toRandomCase(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    // console.log(str[i]);
+    if (Math.random() < 0.5) {
+      newStr += str[i].toUpperCase();
+    } else {
+      newStr += str[i].toLowerCase();
+    }
+  }
+
+  return newStr;
 }
