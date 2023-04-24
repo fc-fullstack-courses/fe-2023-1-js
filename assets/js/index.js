@@ -66,6 +66,18 @@ function toRandomCase(str) {
   return newStr;
 }
 
+/**
+ * @param {string} str
+ * @returns {string}
+ */
+const toRandomCase2 = (str) =>
+  str
+    .split('')
+    .map((letter) =>
+      Math.random() < 0.5 ? letter.toUpperCase() : letter.toLowerCase()
+    )
+    .join('');
+
 /*
   Створити функцію яка приймає рядок
   і повертає нову версію цього рядка,
@@ -103,8 +115,6 @@ function capitilizeString2(str) {
   const words = str.split(' ');
 
   const capitalizedWords = words.map(function (word) {
-    // const firstLetter = word[0].toUpperCase();
-    // return firstLetter + word.slice(1);
     return word[0].toUpperCase() + word.slice(1);
   });
 
@@ -112,3 +122,14 @@ function capitilizeString2(str) {
 }
 
 const capitilizeTest = 'test string abc tst zcjno dgijds';
+
+/**
+ *
+ * @param {string} str
+ * @returns {string}
+ */
+const capitilizeString3 = (str) =>
+  str
+    .split(' ')
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(' ');
