@@ -65,3 +65,50 @@ function toRandomCase(str) {
 
   return newStr;
 }
+
+/*
+  Створити функцію яка приймає рядок
+  і повертає нову версію цього рядка,
+  у якому кожне слово гарантовано написано 
+  з великої літери
+
+  'test string abc' => 'Test String Abc'
+*/
+/**
+ *
+ * @param {string} str
+ * @returns {string}
+ */
+function capitilizeString(str) {
+  const words = str.split(' ');
+  // console.log(words);
+
+  for (let i = 0; i < words.length; i++) {
+    // const firstLetter = words[i][0] ;
+    const word = words[i];
+    const firstLetter = word[0].toUpperCase();
+
+    words[i] = firstLetter + word.slice(1);
+  }
+
+  return words.join(' ');
+}
+
+/**
+ *
+ * @param {string} str
+ * @returns {string}
+ */
+function capitilizeString2(str) {
+  const words = str.split(' ');
+
+  const capitalizedWords = words.map(function (word) {
+    // const firstLetter = word[0].toUpperCase();
+    // return firstLetter + word.slice(1);
+    return word[0].toUpperCase() + word.slice(1);
+  });
+
+  return capitalizedWords.join(' ');
+}
+
+const capitilizeTest = 'test string abc tst zcjno dgijds';
