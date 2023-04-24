@@ -285,3 +285,30 @@ function square(num = 5) {
   // const num1 = num || 5;
   return mulitply(num, num);
 }
+
+// arrow function
+// const arrowSum = (num1 = 2, num2 = 2) => {
+//   return num1 + num2;
+// };
+
+// new arrowSum(); не можу бути конструктором
+
+// не має arguments
+
+function declar() {
+  console.log(arguments); // все норм, якійсь об'ект
+}
+
+const arr = () => {
+  console.log(arguments); // помилка бо немає
+};
+
+// function sum(num1, num2 = 5) {
+//   return num1 + num2;
+// }
+
+const arrowSum = (num1, num2 = 5) => num1 + num2;
+
+const numbers = [1, 2, 3, 4, 5];
+
+const evenNumbers = numbers.filter((number) => number % 2 === 0);
