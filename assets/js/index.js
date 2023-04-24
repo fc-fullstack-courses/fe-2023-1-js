@@ -271,7 +271,7 @@ function func2() {
 
 let x = 1;
 
-function sum(num1, num2) {
+function sum(num1 , num2 = 5) {
   return num1 + num2;
 }
 
@@ -279,6 +279,7 @@ function mulitply(num1, num2) {
   return num1 * num2;
 }
 
-function square(num) {
+function square(num = 5) {
+  // const num1 = num || 5;
   return mulitply(num, num);
 }
