@@ -271,9 +271,11 @@ function func2() {
 
 let x = 1;
 
-function sum(num1 , num2 = 5) {
+function sum(num1, num2 = 5) {
   return num1 + num2;
 }
+
+sum(5, 4);
 
 function mulitply(num1, num2) {
   return num1 * num2;
