@@ -235,18 +235,18 @@ function sum2(num1, num2) {
  * @param {number} value2
  * @param {Function} callback
  */
-function highOrderFunction(value1, value2, callback) {
-  // debugger;
+// function highOrderFunction(value1, value2, callback) {
+//   // debugger;
 
-  callback(value1, value2);
-}
+//   callback(value1, value2);
+// }
 
-function sum(num1, num2) {
-  return num1 + num2;
-}
+// function sum(num1, num2) {
+//   return num1 + num2;
+// }
 
 // highOrderFunction(2, 2, console.log);
-highOrderFunction(2, 2, sum);
+// highOrderFunction(2, 2, sum);
 
 function highOrderFunction2() {
   // debugger;
@@ -255,3 +255,30 @@ function highOrderFunction2() {
 }
 
 const func = highOrderFunction2();
+
+func2();
+
+const func1 = function () {
+  const test = 1234;
+  return test + 2;
+};
+
+function func2() {
+  console.log(this);
+  const test = 1234;
+  return test + 2;
+}
+
+let x = 1;
+
+function sum(num1, num2) {
+  return num1 + num2;
+}
+
+function mulitply(num1, num2) {
+  return num1 * num2;
+}
+
+function square(num) {
+  return mulitply(num, num);
+}
