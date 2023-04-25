@@ -38,3 +38,36 @@ const sum2 = (...numbers) => numbers.reduce((acc, number) => acc + number);
 const multiply = (...numbers) =>
   numbers.reduce((acc, number) => acc * number, 1);
 
+// Синтаксис розширення (spread)
+const numbers = [500, 123, 546, 9878, -5662, 31, 2321];
+const numbers2 = [-152, 546, 3213, -456, -6546];
+
+/*
+  створіть мені третій масив у фкому будуть всі елементи з двох попередніх масивів. Конкат не використовувати
+*/
+
+const allNumbers = [...numbers, 'asdsadsa', ...numbers2];
+
+// const result = sum2(numbers[0], numbers[1], numbers[2], numbers[3], numbers[4]);
+
+// sum2(numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers2[0], numbers2[1])
+const result = sum2(...numbers, ...numbers2);
+
+console.log(result);
+
+const obj1 = {
+  name: 'Test',
+  age: 21312,
+};
+
+const obj2 = {
+  lastName: 'User',
+  age: 12
+};
+
+const user = {
+  ...obj2,
+  ...obj1,
+  age: 5
+};
+
