@@ -69,3 +69,45 @@ const adder = createAdder(10);
 const res1 = adder(30); // 40
 const res2 = adder(20); // 60
 const res3 = adder(40); // 100
+
+// function sum(a, b, c) {
+//   return a + b + c;
+// }
+
+// sum(10,20,30)
+
+//const result = sum(10)(20)(30)
+
+// v1
+
+// function sum(a) {
+//   function temp1(b) {
+//     function temp2(c) {
+//       return a + b + c;
+//     }
+
+//     return temp2;
+//   }
+
+//   return temp1;
+// }
+
+// v2
+
+// function sum(a) {
+//   return function (b) {
+//     return function (c) {
+//       return a + b + c;
+//     };
+//   };
+// }
+
+// v3
+const sum = (a) => (b) => (c) => a + b + c;
+
+// const temp1 = sum(10);
+// const temp2 = sum(10)(20);
+const result = sum(10)(20)(30);
+
+// function connect () {}
+// connect(func1, func2)(Component)
