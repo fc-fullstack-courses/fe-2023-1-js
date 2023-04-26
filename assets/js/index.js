@@ -62,13 +62,13 @@ const obj1 = {
 
 const obj2 = {
   lastName: 'User',
-  age: 12
+  age: 12,
 };
 
 const user = {
   ...obj2,
   ...obj1,
-  age: 5
+  age: 5,
 };
 
 /*
@@ -77,5 +77,19 @@ const user = {
   і повертає кількість стрінгів (або інших типів даних за вашим бажанням) у цих параметрах
 
   (1, 2, 'test', true, 'false', null) => 2
-
 */
+
+function countNumbers(...values) {
+  let result = 0;
+
+  for (let i = 0; i < values.length; i++) {
+    if (typeof values[i] === 'number') {
+      result++;
+    }
+  }
+
+  return result;
+}
+
+const countNumbers1 = (...values) =>
+  values.filter((value) => typeof value === 'number').length;
