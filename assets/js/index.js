@@ -111,3 +111,44 @@ const result = sum(10)(20)(30);
 
 // function connect () {}
 // connect(func1, func2)(Component)
+
+// function countDataTypes(dataType, ...values) {
+//   let result = 0;
+
+//   for (let i = 0; i < values.length; i++) {
+//     if (typeof values[i] === dataType) {
+//       result++;
+//     }
+//   }
+
+//   return result;
+// }
+
+function countDataTypes(dataType) {
+  return function (...values) {
+    let result = 0;
+
+    for (let i = 0; i < values.length; i++) {
+      if (typeof values[i] === dataType) {
+        result++;
+      }
+    }
+
+    return result;
+  };
+}
+
+const countNumbers = countDataTypes('number');
+const countStrings = countDataTypes('string');
+const countBooleans = countDataTypes('boolean');
+const countFunctions = countDataTypes('function');
+
+const countDataTypesArr =
+  (dataType) =>
+  (...values) =>
+    values.filter((value) => typeof value === dataType).length;
+
+const countNumbers2 = countDataTypesArr('number');
+const countStrings2 = countDataTypesArr('string');
+const countBooleans2 = countDataTypesArr('boolean');
+const countFunctions2 = countDataTypesArr('function');
