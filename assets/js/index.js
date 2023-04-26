@@ -63,15 +63,7 @@ const counter2 = createCounter();
   adder(40) // 100
 */
 
-function createAdder(number) {
-  let accumulator = number;
-
-  function adder(num) {
-    return (accumulator += num);
-  }
-
-  return adder;
-}
+const createAdder = (number) => (num) => (number += num);
 
 const adder = createAdder(10);
 const res1 = adder(30); // 40
