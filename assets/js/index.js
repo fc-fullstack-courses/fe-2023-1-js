@@ -37,13 +37,16 @@ wrapper(); // 20
 
 function createCounter() {
   let i = 0; // замкнена змінна для counter
+  
+  return {
+    increment: function () {
 
-  function counter() {
-    i++;
-    return i;
+      return ++i;
+    },
+    decrement: function () {
+      return --i;
+    }
   };
-
-  return counter;
 }
 
 const counter1 = createCounter();
