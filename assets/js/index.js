@@ -87,3 +87,29 @@ function toPower(number, exp) {
 // toPower(5,3) => 5 * 5 * 5
 // toPower(5,2) => 5 * 5
 // toPower(5,1) => 5
+
+/*
+  зробити рекурсивну функцію яка буде повртати значення
+  факторіалу числа. 
+
+  5 = 1 * 2 * 3 * 4 * 5 = 120
+  4 = 1 * 2 * 3 * 4 = 24
+  3 = 1 * 2 * 3 = 6
+
+*/
+
+function getFactorial(number) {
+  if (number === 0 || number === 1) {
+    return 1;
+  }
+
+  if (number > 1) {
+    return number * getFactorial(number - 1);
+  }
+
+  if (number < 0) {
+    throw new RangeError(
+      'Факторіал можу розраховуватися тількі від ненагатичвних чисел'
+    );
+  }
+}
