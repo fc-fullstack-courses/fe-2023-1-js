@@ -8,13 +8,23 @@
 //   test();
 // }
 
-function countdown (number) {
+function countdown(number) {
   // debugger;
   console.log(number);
-  if(number > 0) {
+  if (number > 0) {
     // рекурсивний випадок
     countdown(number - 1);
   }
 
   return 'end'; // база рекурсії
 }
+
+function logRange(start, end) {
+  console.log(start);
+
+  if(start < end) {
+    // debugger;
+    logRange(start + 1, end);
+  }
+}
+
