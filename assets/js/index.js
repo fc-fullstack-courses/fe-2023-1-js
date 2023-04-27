@@ -53,17 +53,37 @@ const tree = {
   },
 };
 
-function reduceTree (tree) {
+function reduceTree(tree) {
   debugger;
   let result = tree.value;
 
-  if(tree.left) {
+  if (tree.left) {
     result += reduceTree(tree.left);
   }
 
-  if(tree.right) {
+  if (tree.right) {
     result += reduceTree(tree.right);
   }
 
   return result;
 }
+
+function toPower(number, exp) {
+  if (exp === 0) {
+    return 1;
+  }
+
+  if (exp === 1) {
+    return number;
+  }
+
+  if (exp > 1) {
+    return number * toPower(number, exp - 1);
+  }
+
+  return 1 / toPower(number, -exp);
+}
+
+// toPower(5,3) => 5 * 5 * 5
+// toPower(5,2) => 5 * 5
+// toPower(5,1) => 5
