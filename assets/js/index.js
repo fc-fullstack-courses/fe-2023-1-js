@@ -115,9 +115,33 @@ const order1Products = [
 
 // const order1Products2 = ['pizza 4 cheese', 'cola'];
 
+// enumeration
+const ORDER_STATUS = {
+  DELIVERED: 'delivered',
+  IN_TRANSIT: 'in transit',
+  ORDERED: 'ordered',
+  PENDING_PAYMENT: 'pending payment'
+};
+
 const order1 = new Order(
   customer1,
   'vyl. Garna 5',
-  'delivered',
+  ORDER_STATUS.DELIVERED,
   order1Products
 );
+const order2 = new Order(
+  customer1,
+  'vyl. Garna 5',
+  ORDER_STATUS.IN_TRANSIT,
+  order1Products
+);
+const order3 = new Order(
+  customer1,
+  'vyl. Garna 5',
+  ORDER_STATUS.ORDERED,
+  order1Products
+);
+
+if(order1.status === ORDER_STATUS.DELIVERED) {
+  console.log('order 1 is delivered')
+}
