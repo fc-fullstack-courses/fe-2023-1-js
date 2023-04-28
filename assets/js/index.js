@@ -58,7 +58,6 @@ class Worker {
 }
 
 const w1 = new Worker('1', '1', 20, 1);
-const w2 = new Worker('2', '2', 5, 2);
 
 // if(w1.isAdult() === '1 1 is adult' ) {
 //   alert('You are adult')
@@ -79,4 +78,28 @@ const w2 = new Worker('2', '2', 5, 2);
   в замовлення має бути метод print
   він повертє рядок в якому вказана кому що і куди їде
   і який поточний статус
-  */
+*/
+
+class Order {
+  constructor(customer, address, status, product) {
+    this.customer = customer;
+    this.address = address;
+    this.status = status;
+    this.product = product;
+  }
+
+  print() {
+    return `Order with customer ${this.customer.getFullName()} has status: ${
+      this.status
+    } and address: ${this.address}. Order contains ${this.product}`;
+  }
+}
+
+const customer1 = new Worker('Test', 'Userenko', 33, 4);
+
+const order1 = new Order(
+  customer1,
+  'vyl. Garna 5',
+  'delivered',
+  'pizza 4 cheese'
+);
