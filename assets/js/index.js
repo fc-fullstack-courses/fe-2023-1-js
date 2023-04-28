@@ -81,25 +81,43 @@ const w1 = new Worker('1', '1', 20, 1);
 */
 
 class Order {
-  constructor(customer, address, status, product) {
+  constructor(customer, address, status, products) {
     this.customer = customer;
     this.address = address;
     this.status = status;
-    this.product = product;
+    this.products = products;
   }
 
   print() {
     return `Order with customer ${this.customer.getFullName()} has status: ${
       this.status
-    } and address: ${this.address}. Order contains ${this.product}`;
+    } and address: ${this.address}. Order contains ${this.products
+      .map(
+        (productData) =>
+          `${productData.amount} units of product ${productData.productName}`
+      )
+      .join(', ')}`;
   }
 }
 
 const customer1 = new Worker('Test', 'Userenko', 33, 4);
 
+const order1Products = [
+  {
+    productName: 'pizza 4 cheese',
+    amount: 3,
+  },
+  {
+    productName: 'cola',
+    amount: 4,
+  },
+];
+
+// const order1Products2 = ['pizza 4 cheese', 'cola'];
+
 const order1 = new Order(
   customer1,
   'vyl. Garna 5',
   'delivered',
-  'pizza 4 cheese'
+  order1Products
 );
