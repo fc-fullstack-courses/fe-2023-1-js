@@ -53,12 +53,26 @@ const tree = {
   },
 };
 
+const tree1 = {
+  value: 5,
+  left: {
+    value: 10,
+    left: {
+      value: 7,
+    },
+  },
+  right: {
+    value: 3,
+  },
+};
+
 function reduceTree(tree) {
-  debugger;
+  // debugger;
   let result = tree.value;
 
   if (tree.left) {
-    result += reduceTree(tree.left);
+    const leftBranch = reduceTree(tree.left);
+    result += leftBranch;
   }
 
   if (tree.right) {
@@ -112,4 +126,31 @@ function getFactorial(number) {
       'Факторіал можу розраховуватися тількі від ненагатичвних чисел'
     );
   }
+}
+
+/*
+
+  зробити функцію, якій ми будемо передавати число
+  функція маєповернути стількі відкриваючих та закриваючих дужок
+  скільки було вказано
+
+
+  4 => (((())))
+  3 => ((()))
+  2 => (())
+  1 => ()
+*/
+
+function getCircles(number) {
+  if (number < 1) {
+    throw new RangeError('Некоректне значення number');
+  }
+
+  if (number === 1) {
+    return '()';
+  }
+
+  // return '(' + getCircles(number - 1) + ')';
+
+  return `(${getCircles(number - 1)})`;
 }
