@@ -1,21 +1,18 @@
 'use strict';
 
-class CatClass {
-  constructor(nickname, breed, age, gender) {
+class Cat {
+  // конструктор має бути від нуля до 1
+  constructor(nickname, breed, age, gender = 'male') {
     this.nickname = nickname;
     this.breed = breed;
     this.age = age;
     this.gender = gender;
   }
 
+  // метод екземпляру кота
   meow() {
     return `${this.nickname} is meowing`;
   }
-
-  sleep() {
-    return `${this.nickname} goes to sleep`;
-  }
 }
 
-const coolerBarsik = new CatClass('Barsik', 'British', 3, 'male');
-const Myrka = new CatClass('Myrka', 'British', 4, 'female');
+const cat1 = new Cat('test', 'test', 5);
