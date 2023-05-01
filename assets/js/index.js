@@ -67,7 +67,17 @@ class Worker {
 
     return this.age >= 18;
   }
+  
+  static isWorker(object) {
+    return object instanceof Worker;
+  }
+
+  static test = 4;
 }
+
+// Worker.isWorker = function (object) {
+//   return object instanceof Worker;
+// }
 
 const w1 = new Worker('1', '1', 20, 1);
 
@@ -97,12 +107,25 @@ class Order {
 
   constructor(customer, address, status, products) {
 
-    this._customer = customer;
+    this.customer = customer;
     this.address = address;
     this.status = status;
     this.products = products;
 
     this.#private = 'secret';
+  }
+
+  get customer () {
+    return this._customer;
+  }
+  
+  set customer (customerObj) {
+    
+    if(!Worker.isWorker(customerObj)) {
+      throw new TypeError('customer must be Worker instance')
+    }
+
+    this._customer = customerObj;
   }
 
   // getStatus() {
