@@ -68,7 +68,6 @@ const w1 = new Worker('1', '1', 20, 1);
 // }
 
 /*
-
   Створити класс Order (Замовлення)
   у замовлення є замовник
   адреса
@@ -82,10 +81,42 @@ const w1 = new Worker('1', '1', 20, 1);
 
 class Order {
   constructor(customer, address, status, products) {
-    this.customer = customer;
-    this.address = address;
+    if (typeof address !== 'string' || address === '') {
+      throw new TypeError('Invalid data for address');
+    }
+
+    if (!Array.isArray(products)) {
+      throw new TypeError('products must be array');
+    }
+
+    this._customer = customer;
+    this._address = address;
     this.status = status;
-    this.products = products;
+    this._products = products;
+  }
+
+  // getStatus() {
+  //   return this._status;
+  // }
+
+  get status () {
+    return this._status;
+  }
+
+  // setStatus(newStatus) {
+  //   if (!Object.values(ORDER_STATUS).includes(newStatus)) {
+  //     throw new TypeError('Incorrect status value');
+  //   }
+
+  //   this._status = newStatus;
+  // }
+
+  set status (newStatus) {
+    if (!Object.values(ORDER_STATUS).includes(newStatus)) {
+      throw new TypeError('Incorrect status value');
+    }
+
+    this._status = newStatus;
   }
 
   print() {
@@ -120,7 +151,7 @@ const ORDER_STATUS = {
   DELIVERED: 'delivered',
   IN_TRANSIT: 'in transit',
   ORDERED: 'ordered',
-  PENDING_PAYMENT: 'pending payment'
+  PENDING_PAYMENT: 'pending payment',
 };
 
 const order1 = new Order(
@@ -142,6 +173,13 @@ const order3 = new Order(
   order1Products
 );
 
-if(order1.status === ORDER_STATUS.DELIVERED) {
-  console.log('order 1 is delivered')
-}
+const order4 = new Order(
+  customer1,
+  'vyl. Garna 5',
+  ORDER_STATUS.DELIVERED,
+  order1Products
+);
+
+// if(order1.status === ORDER_STATUS.DELIVERED) {
+//   console.log('order 1 is delivered')
+// }
