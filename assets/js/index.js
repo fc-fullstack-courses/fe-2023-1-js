@@ -92,12 +92,17 @@ const w1 = new Worker('1', '1', 20, 1);
 */
 
 class Order {
+  #private;
+  #status;
+
   constructor(customer, address, status, products) {
 
     this._customer = customer;
     this.address = address;
     this.status = status;
     this.products = products;
+
+    this.#private = 'secret';
   }
 
   // getStatus() {
@@ -105,7 +110,7 @@ class Order {
   // }
 
   get status () {
-    return this._status;
+    return this.#status;
   }
 
   // setStatus(newStatus) {
@@ -121,7 +126,7 @@ class Order {
       throw new TypeError('Incorrect status value');
     }
 
-    this._status = newStatus;
+    this.#status = newStatus;
   }
 
   get products () {
