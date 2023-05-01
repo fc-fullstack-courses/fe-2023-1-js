@@ -30,7 +30,6 @@ const cat1 = new Cat('test', 'test', 5);
     метод перевірки повноліття 
 */
 
-
 /*
   зробити геттери та сеттери для Worker
   для наступних властивостй
@@ -67,7 +66,7 @@ class Worker {
 
     return this.age >= 18;
   }
-  
+
   static isWorker(object) {
     return object instanceof Worker;
   }
@@ -106,7 +105,6 @@ class Order {
   #status;
 
   constructor(customer, address, status, products) {
-
     this.customer = customer;
     this.address = address;
     this.status = status;
@@ -115,14 +113,13 @@ class Order {
     this.#private = 'secret';
   }
 
-  get customer () {
+  get customer() {
     return this._customer;
   }
-  
-  set customer (customerObj) {
-    
-    if(!Worker.isWorker(customerObj)) {
-      throw new TypeError('customer must be Worker instance')
+
+  set customer(customerObj) {
+    if (!Worker.isWorker(customerObj)) {
+      throw new TypeError('customer must be Worker instance');
     }
 
     this._customer = customerObj;
@@ -132,7 +129,7 @@ class Order {
   //   return this._status;
   // }
 
-  get status () {
+  get status() {
     return this.#status;
   }
 
@@ -144,7 +141,7 @@ class Order {
   //   this._status = newStatus;
   // }
 
-  set status (newStatus) {
+  set status(newStatus) {
     if (!Object.values(ORDER_STATUS).includes(newStatus)) {
       throw new TypeError('Incorrect status value');
     }
@@ -152,11 +149,11 @@ class Order {
     this.#status = newStatus;
   }
 
-  get products () {
+  get products() {
     return this._products;
   }
 
-  set products (products) {
+  set products(products) {
     if (!Array.isArray(products)) {
       throw new TypeError('products must be array');
     }
@@ -164,11 +161,11 @@ class Order {
     this._products = products;
   }
 
-  get address () {
+  get address() {
     return this._address;
   }
 
-  set address (address) {
+  set address(address) {
     if (typeof address !== 'string' || address === '') {
       throw new TypeError('Invalid data for address');
     }
@@ -240,3 +237,33 @@ const order4 = new Order(
 // if(order1.status === ORDER_STATUS.DELIVERED) {
 //   console.log('order 1 is delivered')
 // }
+
+class User {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  createMessage(message) {
+    console.log(message);
+  }
+}
+
+const u1 = new User('User', '1', 21);
+
+class Moderator extends User {
+  constructor(name1, name2, age1, permissions) {
+    // даємо все що потрібно конструктру батьківського
+    // класу 
+    super(name1,name2, age1);
+    // тількі після виклику super
+    this.permissions = permissions;
+  }
+
+  deleteMessage(message) {
+    console.log('message deleted');
+  }
+}
+
+const m1 = new Moderator('Moder', '2', 324);
