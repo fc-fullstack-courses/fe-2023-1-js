@@ -30,6 +30,18 @@ const cat1 = new Cat('test', 'test', 5);
     метод перевірки повноліття 
 */
 
+
+/*
+  зробити геттери та сеттери для Worker
+  для наступних властивостй
+  firstName
+  lastName
+  age
+  yearsOfExpirience
+
+  ще має бути геттер fullName
+  
+*/
 class Worker {
   constructor(firstName, lastName, age, yearsOfExpirience) {
     this.firstName = firstName;
@@ -81,18 +93,11 @@ const w1 = new Worker('1', '1', 20, 1);
 
 class Order {
   constructor(customer, address, status, products) {
-    if (typeof address !== 'string' || address === '') {
-      throw new TypeError('Invalid data for address');
-    }
-
-    if (!Array.isArray(products)) {
-      throw new TypeError('products must be array');
-    }
 
     this._customer = customer;
     this._address = address;
     this.status = status;
-    this._products = products;
+    this.products = products;
   }
 
   // getStatus() {
@@ -117,6 +122,30 @@ class Order {
     }
 
     this._status = newStatus;
+  }
+
+  get products () {
+    return this._products;
+  }
+
+  set products (products) {
+    if (!Array.isArray(products)) {
+      throw new TypeError('products must be array');
+    }
+
+    this._products = products;
+  }
+
+  get address () {
+    return this._address;
+  }
+
+  set address (address) {
+    if (typeof address !== 'string' || address === '') {
+      throw new TypeError('Invalid data for address');
+    }
+
+    this._address = address;
   }
 
   print() {
