@@ -95,7 +95,7 @@ class Order {
   constructor(customer, address, status, products) {
 
     this._customer = customer;
-    this._address = address;
+    this.address = address;
     this.status = status;
     this.products = products;
   }
