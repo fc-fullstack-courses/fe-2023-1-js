@@ -292,13 +292,36 @@ class Admin extends Moderator {
     super(name1, name2, age1, permissions);
   }
 
+  static isAdmin(user) {
+    return user instanceof Admin;
+  }
+
   ban(user) {
     if (!User.isUser(user)) {
       throw new TypeError('You can only ban users');
     }
-    // console.log(`${user} is banned`)
+    if (Admin.isAdmin(user)) {
+      throw new TypeError('You can`t ban admins');
+    }
+
+    if (user.isBanned) {
+      throw new Error('User already banned');
+    }
+
     user.isBanned = true;
 
     // return true;
+  }
+
+  unBan(user) {
+    if (!User.isUser(user)) {
+      throw new TypeError('You can only unban users');
+    }
+
+    if (!user.isBanned) {
+      throw new Error('User is not banned');
+    }
+
+    user.isBanned = false;
   }
 }
