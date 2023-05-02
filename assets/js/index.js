@@ -345,3 +345,49 @@ class Hamster {
 }
 
 const hamster = new Hamster();
+
+// Поліморфізм
+class Figure {
+  constructor(name) {
+    this.name = name;
+  }
+
+  getArea() {}
+}
+
+const figure1 = new Figure('figure');
+
+class Triangle extends Figure {
+  constructor(a, h) {
+    super('triangle');
+    this.a = a;
+    this.h = h;
+  }
+
+  getArea() {
+    return this.a * this.h * 0.5;
+  }
+}
+
+const triangle1 = new Triangle(5, 7);
+
+class Square extends Figure {
+  constructor(a) {
+    super('square');
+    this.a = a;
+  }
+
+  getArea() {
+    return this.a * this.a;
+  }
+}
+
+const square1 = new Square(8);
+
+function getFigureArea(figure) {
+  if(figure instanceof Figure) {
+    return figure.getArea();
+  }
+
+  throw new TypeError('You must provide Figure instance');
+}
