@@ -49,7 +49,7 @@ class Worker {
     this.yearsOfExpirience = yearsOfExpirience;
   }
 
-  getFullName() {
+  get fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
 
@@ -103,6 +103,9 @@ const w1 = new Worker('1', '1', 20, 1);
 class Order {
   #private;
   #status;
+  #test = 21345;
+  #customer;
+  
 
   constructor(customer, address, status, products) {
     this.customer = customer;
@@ -114,7 +117,7 @@ class Order {
   }
 
   get customer() {
-    return this._customer;
+    return this.#customer;
   }
 
   set customer(customerObj) {
@@ -122,7 +125,7 @@ class Order {
       throw new TypeError('customer must be Worker instance');
     }
 
-    this._customer = customerObj;
+    this.#customer = customerObj;
   }
 
   // getStatus() {
@@ -149,7 +152,7 @@ class Order {
     this.#status = newStatus;
   }
 
-  get products() {
+  get abc() {
     return this._products;
   }
 
@@ -214,6 +217,10 @@ const order1 = new Order(
   ORDER_STATUS.DELIVERED,
   order1Products
 );
+
+// console.log(order1.#private);
+// order1.#private = 'asdsaddsa';
+
 const order2 = new Order(
   customer1,
   'vyl. Garna 5',
@@ -255,8 +262,8 @@ const u1 = new User('User', '1', 21);
 class Moderator extends User {
   constructor(name1, name2, age1, permissions) {
     // даємо все що потрібно конструктру батьківського
-    // класу 
-    super(name1,name2, age1);
+    // класу
+    super(name1, name2, age1);
     // тількі після виклику super
     this.permissions = permissions;
   }
@@ -267,3 +274,11 @@ class Moderator extends User {
 }
 
 const m1 = new Moderator('Moder', '2', 324);
+
+/*
+  Створити клас Admin який спадкується від Moderator
+  адміни мають вміти банити користувачів
+
+  При цьому у будья кого користувача має бути властивість
+  isBanned яка показує чи забанен він
+*/
