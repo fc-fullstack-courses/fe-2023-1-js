@@ -325,3 +325,23 @@ class Admin extends Moderator {
     user.isBanned = false;
   }
 }
+
+// Інкапсуляція
+class Hamster {
+  #mood;
+
+  constructor() {
+    this.#mood = 'good';
+  }
+  #bite(target) {}
+
+  eat(food) {
+    if (food === 'nuts') {
+      this.#mood = 'good';
+    } else {
+      this.#mood = 'bad';
+    }
+  }
+}
+
+const hamster = new Hamster();
