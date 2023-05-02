@@ -384,8 +384,29 @@ class Square extends Figure {
 
 const square1 = new Square(8);
 
+/*
+  Зробіті клас фігур Circle (круг)
+  і змусть його показвати вам коректну площу для нього
+*/
+
+class Circle extends Figure {
+  constructor(r) {
+    super('circle');
+    this.r = r;
+  }
+
+  getArea() {
+    // return 3.14 * this.r * this.r;
+    // return 3.14 * (this.r ** 2);
+    // return 3.14 * Math.pow(this.r, 2);
+    return Math.PI * this.r * this.r;
+  }
+}
+
+const circle1 = new Circle(10);
+
 function getFigureArea(figure) {
-  if(figure instanceof Figure) {
+  if (figure instanceof Figure) {
     return figure.getArea();
   }
 
