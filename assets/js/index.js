@@ -105,7 +105,6 @@ class Order {
   #status;
   #test = 21345;
   #customer;
-  
 
   constructor(customer, address, status, products) {
     this.customer = customer;
@@ -250,10 +249,15 @@ class User {
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
+    this.isBanned = false;
   }
 
   createMessage(message) {
     console.log(message);
+  }
+
+  static isUser(user) {
+    return user instanceof User;
   }
 }
 
@@ -282,3 +286,19 @@ const m1 = new Moderator('Moder', '2', 324);
   При цьому у будья кого користувача має бути властивість
   isBanned яка показує чи забанен він
 */
+
+class Admin extends Moderator {
+  constructor(name1, name2, age1, permissions) {
+    super(name1, name2, age1, permissions);
+  }
+
+  ban(user) {
+    if (!User.isUser(user)) {
+      throw new TypeError('You can only ban users');
+    }
+    // console.log(`${user} is banned`)
+    user.isBanned = true;
+
+    // return true;
+  }
+}
