@@ -42,7 +42,7 @@ x = n!  (3)  => O(n!)
 O(n!)
 O(2^n)
 O(n^2)
-O(n)
+O(n) - лінійна
 O(log n)
 O(7) - константна 
 */
@@ -50,4 +50,16 @@ O(7) - константна
 // константна
 const arr = [1,4,58,7,8,3];
 arr[1];
+
+// лінійна - проходимось по всьому масиву один раз у найгішому випадку
+function linearSearch(arr, value) {
+
+  for(let i =0; i <arr.length; i++) {
+    if(arr[i] === value) {
+      return i;
+    }
+  }
+
+  return -1;
+}
 
