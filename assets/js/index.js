@@ -63,3 +63,17 @@ function linearSearch(arr, value) {
   return -1;
 }
 
+// O(n^2) квадратична
+function createMultiplicationTable (n = 10) {
+  const table = [];
+
+  // debugger;
+
+  for(let i = 1; i <= n; i++) {
+    for(let j = 1; j <= n; j++) {
+      table.push(`${i} * ${j} = ${i * j}`);
+    }    
+  }
+
+  return table;
+}
