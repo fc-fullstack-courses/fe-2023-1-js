@@ -1,21 +1,21 @@
 'use strict';
 
-class Cat {
-  // конструктор має бути від нуля до 1
-  constructor(nickname, breed, age, gender = 'male') {
-    this.nickname = nickname;
-    this.breed = breed;
-    this.age = age;
-    this.gender = gender;
-  }
+// class Cat {
+//   // конструктор має бути від нуля до 1
+//   constructor(nickname, breed, age, gender = 'male') {
+//     this.nickname = nickname;
+//     this.breed = breed;
+//     this.age = age;
+//     this.gender = gender;
+//   }
 
-  // метод екземпляру кота
-  meow() {
-    return `${this.nickname} is meowing`;
-  }
-}
+//   // метод екземпляру кота
+//   meow() {
+//     return `${this.nickname} is meowing`;
+//   }
+// }
 
-const cat1 = new Cat('test', 'test', 5);
+// const cat1 = new Cat('test', 'test', 5);
 
 /*
   Створити класс Worker
@@ -412,3 +412,98 @@ function getFigureArea(figure) {
 
   throw new TypeError('You must provide Figure instance');
 }
+
+/*
+  Створити клас Animal і успадкувати від нього декілька
+  класів тварин (коти, собика, хом'ячки)
+
+  Всі тварини мають ім'я і вид тварин
+  Також всі тварини вміють їсти, рухатись і спати
+
+  Створіть класс Дресирувальника. У нього будуть методи
+  які будть змушувати тваринку робити якісь речі
+
+  Бонусно властивості! тварин зробити приватними, надати досутп до них 
+  через геттери та сеттери
+*/
+
+class Animal {
+  #species;
+  #name;
+
+  constructor(species, name) {
+    this.species = species;
+    this.name = name;
+  }
+
+  get species () {
+    return this.#species;
+  }
+
+  get name () {
+    return this.#name;
+  }
+
+  set species (species) {
+    if( typeof species !== 'string') {
+      throw new TypeError('Invalid species data')
+    }
+
+    this.#species = species;
+  }
+
+  set name (name) {
+    if( typeof name !== 'string') {
+      throw new TypeError('Invalid name data')
+    }
+
+    this.#name = name;
+  }
+
+  eat(food) {
+    return `${this.species} ${this.name} eats ${food}`;
+  }
+
+  move() {
+    return `${this.species} ${this.name} moves`;
+  }
+
+  sleep() {
+    return `${this.species} ${this.name} is sleeping`;
+  }
+
+  static isAnimal (object) {
+    return object instanceof Animal;
+  }
+}
+
+class Cat extends Animal {
+  constructor(name){
+    super('Cat', name);
+  }
+}
+
+class Mouse extends Animal {
+  constructor(name) {
+    super('Mouse', name);
+  }
+}
+
+const cat1 = new Cat('Test');
+
+class Trainer {
+  constructor(name) {
+    this.name = name;
+  }
+
+  feedAnimal(animal, food ) {
+    if(Animal.isAnimal(animal)) {
+      return animal.eat(food);
+    }
+
+    throw new TypeError('You must feed animal');
+  }
+}
+
+const trainer1 = new Trainer('Trainer');
+
