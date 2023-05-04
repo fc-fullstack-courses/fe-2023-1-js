@@ -77,7 +77,7 @@ const {
 
 const user = {
   id: 135465446,
-  email: 'sadsadsa',
+  email: 'mail@mail.com',
   password: '3ji0wdn084jht0ewifdsa0fne0gfr',
   age: 42,
   isMale: false,
@@ -107,3 +107,8 @@ let test1;
 let test2;
 
 [test1, test2] = testArr;
+
+function getUserData({email, password, ...restUser}) {
+  // const {email, password, ...restUser} = user;
+  return `${email} ${password}`;
+}
