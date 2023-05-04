@@ -84,3 +84,11 @@ const user = {
 };
 
 const { password, email, ...restOfUser } = user;
+
+const numbers = [10, 45, 79, 3218, 87987, -45, -61, 3.13, -645546];
+
+// const firstNumber = numbers[0];
+const [ ,, third,,, sixth ] = numbers;
+
+const [first,,,forth, ...restNumbers] = numbers;
+
