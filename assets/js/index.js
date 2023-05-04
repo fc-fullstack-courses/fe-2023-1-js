@@ -80,7 +80,7 @@ function createMultiplicationTable(n = 10) {
 const testArr = [40, 4, 7, 9, 3, -50, 14, 8, 2];
 
 function bubbleSort(array) {
-  debugger;
+  // debugger;
   for (let i = 0; i < array.length; i++) {
     for (let j = 1; j < array.length; j++) {
       let value1 = array[j - 1];
@@ -94,4 +94,34 @@ function bubbleSort(array) {
   }
 
   return array;
+}
+
+const sortedArr = [-50, -30, -25, -5, 1, 3, 7, 10, 15, 20];
+
+
+function binarySearch(arr, value) {
+  let start = 0;
+  let end = arr.length - 1;
+
+  let center = Math.round((start + end) / 2);
+
+  while(true) {
+    if(arr[center] === value) {
+      return center;
+    }
+
+    if(start === center && end === center) {
+      return -1;
+    }
+
+    if(arr[center] > value) {
+      end = center;
+      center = Math.floor((start + end) / 2);
+    }
+
+    if(arr[center] < value) {
+      start = center;
+      center = Math.ceil((start + end) / 2);
+    }
+  }
 }
