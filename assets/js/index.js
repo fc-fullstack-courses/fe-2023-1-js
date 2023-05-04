@@ -33,7 +33,7 @@ x = y! - факторіал
 /*
 n - вхідні дані / кількість операцій які треба виконати
 
-x = n^2  (1) => O(n^2)
+x = n^2   (1) => O(n^2)
 x = 2^n  (2) => O(2^n)
 x = n!  (3)  => O(n!)
 */
@@ -48,14 +48,13 @@ O(7) - константна
 */
 
 // константна
-const arr = [1,4,58,7,8,3];
+const arr = [1, 4, 58, 7, 8, 3];
 arr[1];
 
 // лінійна - проходимось по всьому масиву один раз у найгішому випадку
 function linearSearch(arr, value) {
-
-  for(let i =0; i <arr.length; i++) {
-    if(arr[i] === value) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
       return i;
     }
   }
@@ -64,16 +63,35 @@ function linearSearch(arr, value) {
 }
 
 // O(n^2) квадратична
-function createMultiplicationTable (n = 10) {
+function createMultiplicationTable(n = 10) {
   const table = [];
 
   // debugger;
 
-  for(let i = 1; i <= n; i++) {
-    for(let j = 1; j <= n; j++) {
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= n; j++) {
       table.push(`${i} * ${j} = ${i * j}`);
-    }    
+    }
   }
 
   return table;
+}
+
+const testArr = [40, 4, 7, 9, 3, -50, 14, 8, 2];
+
+function bubbleSort(array) {
+  debugger;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 1; j < array.length; j++) {
+      let value1 = array[j - 1];
+      let value2 = array[j];
+
+      if (value1 > value2) {
+        array[j] = value1;
+        array[j - 1] = value2;
+      }
+    }
+  }
+
+  return array;
 }
