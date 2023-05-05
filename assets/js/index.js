@@ -7,11 +7,12 @@ class MyArray {
     this.length = 0;
   }
 
-  push(newElem) {
-    // записати елемент
-    this[this.length] = newElem;
-    // оновили довжину масиву
-    this.length++;
+  push(...elements) {
+    for (const elem of elements) {
+      this[this.length] = elem;
+      this.length++;
+    }
+
     return this.length;
   }
 
@@ -26,18 +27,17 @@ class MyArray {
     return undefined;
   }
 
-  [Symbol.iterator] () {
+  [Symbol.iterator]() {
     let i = 0;
     const context = this;
     return {
       next: function () {
-
         return {
           done: i >= context.length,
           value: context[i++],
-        }
-      }
-    }
+        };
+      },
+    };
   }
 }
 
@@ -50,5 +50,5 @@ for (const number of myArr1) {
   console.log(number);
 }
 
-const arr = [1,3,4];
+const arr = [1, 3, 4];
 const iter = arr[Symbol.iterator]();
