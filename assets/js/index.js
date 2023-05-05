@@ -18,15 +18,13 @@ const user = {
 // user[userSymbols[0]]
 const [symbol1] = Object.getOwnPropertySymbols(user);
 
-const arr = [1, 2, 45, 3, 6, 98];
-
 // for (let i = 0; i < arr.length; i++) {
 //   console.log(arr[i]);
 // }
 
-for (const number of arr) {
-  console.log(number);
-}
+// for (const number of arr) {
+//   console.log(number);
+// }
 
 /*
   створіть функцію, яка приймає необмежену кількість параметрів (чисел)
@@ -46,3 +44,7 @@ function multiply (...numbers) {
 
   return result;
 }
+
+const arr = [100, 2, 45, 3, 6, 98];
+// const iteratorFunc = arr[Symbol.iterator];
+const iterator = arr[Symbol.iterator]();
