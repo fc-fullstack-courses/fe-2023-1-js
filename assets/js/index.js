@@ -1,44 +1,41 @@
-function MyArray() {
-  this.length = 0;
-}
+// function MyArray() {
+//   this.length = 0;
+// }
 
-// const myArrayProto = {
-//   push: function (newElem) {
-//     // записати елемент
-//     this[this.length] = newElem;
-//     // оновили довжину масиву
-//     this.length++;
-//     return this.length;
-//   },
-// };
+class MyArray {
+  constructor() {
+    this.length = 0;
+  }
 
-function MyArrayProto() {
-  this.push = function (newElem) {
+  push(newElem) {
     // записати елемент
     this[this.length] = newElem;
     // оновили довжину масиву
     this.length++;
     return this.length;
-  };
+  }
 
-  this.pop = function () {
-
-    if(this.length > 0) {
+  pop() {
+    if (this.length > 0) {
       const lastItem = this[this.length - 1];
       delete this[--this.length];
-  
+
       return lastItem;
     }
 
     return undefined;
-  };
+  }
+
+  
 }
 
-// const myArrayProto = new MyArrayProto();
-// MyArray.prototype = myArrayProto;
-
-MyArray.prototype = new MyArrayProto();
-
 const myArr1 = new MyArray();
+myArr1.push(1);
+myArr1.push(5);
+myArr1.push(8);
+
+// for (const number of myArr1) {
+//   console.log(number);
+// }
 
 const arr = [];
