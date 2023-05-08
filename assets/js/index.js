@@ -29,11 +29,11 @@ const isArr2Deleted = set.delete(arr2);
 // видалити всі значення з сету
 // set.clear();
 
-set.forEach((value, index, set) => {
-  console.log(`value is ${value}`);
-  console.log(`index is ${index}`); // те саме що і value
-  console.log(set);
-});
+// set.forEach((value, index, set) => {
+//   console.log(`value is ${value}`);
+//   console.log(`index is ${index}`); // те саме що і value
+//   console.log(set);
+// });
 
 const set2 = new Set([1, 2, 3, 76, 8, 3, 587]);
 
@@ -62,3 +62,44 @@ const names2 = ['Anna', 'Andriy', 'User'];
 // const arr3 = [...uniqueNames];
 
 const uniqueNames = [...new Set([...names1, ...names2, 'Test'])];
+
+// Map
+// пари ключ -> значення
+// кожен ключ унікален
+// зберігається порядок вставки значень
+// ключем може бути будь-що
+// є вбудований ітератор
+// рахує свій розмір
+// більш отимізована під часті ставки або видалення пар ключ -> значення
+
+const map1 = new Map();
+
+const keyMap = function () {};
+
+// додавання пари до мапи
+map1.set(12345, 'value 1');
+map1.set('12345', 'value 2');
+map1.set(null, 'why?');
+map1.set(keyMap, true);
+map1.set(12345, 'value 10'); // перезапис значення
+
+// отримання значення, пов'язаного з ключем
+const value1 = map1.get(12345);
+const value2 = map1.get(123456); // undefined
+
+// перевірка існування в мапі
+const mapHas1 = map1.has('test');
+const mapHas2 = map1.has(null);
+
+// видалення з мапи
+map1.delete(keyMap);
+
+// видалити все
+// map1.clear()
+
+// forEach
+// map1.forEach((value, key, map) => {
+//   console.log(value);
+//   console.log(key);
+//   console.log(map);
+// })
