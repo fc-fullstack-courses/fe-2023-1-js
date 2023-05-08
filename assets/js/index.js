@@ -37,6 +37,14 @@ const isArr2Deleted = set.delete(arr2);
 
 const set2 = new Set([1, 2, 3, 76, 8, 3, 587]);
 
+for (const key of set2.keys()) {
+  console.log(key); // однаково з value
+}
+
+for (const entry of set2.entries()) {
+  console.log(entry);
+}
+
 /*
   з двох масивів отримати набір унікальних значень
 */
@@ -109,3 +117,32 @@ const map2 = new Map([
   ['key2', 213445],
   [213423543, false],
 ]);
+
+const map3 = new Map(map2);
+
+const mapIter = map3.keys();
+
+// for (const key of mapIter) {
+//   console.log(key);
+// }
+
+const mapValuesIter = map3.values();
+
+// for (const value of mapValuesIter) {
+//   console.log(value);
+// }
+
+// const mapEntriesIter = map3.entries();
+
+// for (const entry of mapEntriesIter) {
+//   // console.log(entry);
+//   console.log(`key is: ${entry[0]}`);
+//   console.log(`value is: ${entry[1]}`);
+// }
+
+for (const [key, value] of map3.entries()) {
+  // const [key, value] = entry;
+
+  console.log(`key is: ${key}`);
+  console.log(`value is: ${value}`);
+}
