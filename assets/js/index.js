@@ -146,3 +146,34 @@ for (const [key, value] of map3.entries()) {
   console.log(`key is: ${key}`);
   console.log(`value is: ${value}`);
 }
+
+const vocabulary = new Map();
+
+vocabulary.set('test', 'тест');
+vocabulary.set('cat', 'кіт');
+vocabulary.set('food', 'їжа');
+vocabulary.set('go', 'йти');
+vocabulary.set('dog', 'собака');
+vocabulary.set('eats', 'їсть');
+vocabulary.set('tomato', 'помідор');
+vocabulary.set('boring', 'нудний');
+
+const testString = 'Boring dog eats food test cat eats tomato';
+
+const translate = (str) => {
+
+  const lowerCaseStr = str.toLowerCase();
+
+  const words = lowerCaseStr.split(' ');
+
+  const translatedWords = [];
+
+  for(const word of words) {
+    const translatedWord = vocabulary.get(word);
+
+    translatedWords.push(translatedWord);
+  }
+
+  const translatedString = translatedWords.join(' ');
+  return translatedString;
+};
