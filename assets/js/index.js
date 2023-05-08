@@ -35,3 +35,4 @@ set.forEach((value, index, set) => {
   console.log(set);
 });
 
+const set2 = new Set([1,2,3,76,8,3,587]);
