@@ -103,3 +103,9 @@ map1.delete(keyMap);
 //   console.log(key);
 //   console.log(map);
 // })
+
+const map2 = new Map([
+  ['key', 'value'], // tuple / кортеж - массив с певною кількістю значень
+  ['key2', 213445],
+  [213423543, false],
+]);
