@@ -35,4 +35,30 @@ set.forEach((value, index, set) => {
   console.log(set);
 });
 
-const set2 = new Set([1,2,3,76,8,3,587]);
+const set2 = new Set([1, 2, 3, 76, 8, 3, 587]);
+
+/*
+  з двох масивів отримати набір унікальних значень
+*/
+
+const names1 = ['Test', 'User', 'Anton', 'Petro'];
+const names2 = ['Anna', 'Andriy', 'User'];
+
+// const uniqueNames = new Set(names1.concat(names2));
+
+// const allNames = [...names1, ...names2, 'Test'];
+// const uniqueNames = new Set(allNames);
+
+// names1.forEach((value) => {
+//   uniqueNames.add(value);
+// });
+
+// const user = {
+//   name: 1,
+// };
+
+// const name = 'Anton';
+
+// const arr3 = [...uniqueNames];
+
+const uniqueNames = [...new Set([...names1, ...names2, 'Test'])];
