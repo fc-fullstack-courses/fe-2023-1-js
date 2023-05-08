@@ -255,3 +255,13 @@ const newObj = {
 };
 
 const newObj2 = new Object({ test: 12345 });
+
+const testObj = {
+  name: 'Test',
+  lastName: 'User',
+  age: 12,
+};
+
+const keys = Object.keys(testObj);
+const values = Object.values(testObj);
+const entries = Object.entries(testObj);
