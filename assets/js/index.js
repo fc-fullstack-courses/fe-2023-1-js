@@ -158,22 +158,25 @@ vocabulary.set('eats', 'їсть');
 vocabulary.set('tomato', 'помідор');
 vocabulary.set('boring', 'нудний');
 
-const testString = 'Boring dog eats food test cat eats tomato';
+const testString = 'Boring dog eats food dolphin test cat eats tomato';
 
-const translate = (str) => {
-
+const translate = (str, vocab = vocabulary, separator = ' ') => {
   const lowerCaseStr = str.toLowerCase();
 
-  const words = lowerCaseStr.split(' ');
+  const words = lowerCaseStr.split(separator);
 
   const translatedWords = [];
 
-  for(const word of words) {
-    const translatedWord = vocabulary.get(word);
+  for (const word of words) {
+    if (vocab.has(word)) {
+      const translatedWord = vocab.get(word);
 
-    translatedWords.push(translatedWord);
+      translatedWords.push(translatedWord);
+    } else {
+      translatedWords.push(word);
+    }
   }
 
-  const translatedString = translatedWords.join(' ');
+  const translatedString = translatedWords.join(separator);
   return translatedString;
 };
