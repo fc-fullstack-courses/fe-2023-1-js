@@ -187,3 +187,13 @@ const translate = (str, vocab = vocabulary, separator = ' ') =>
     .split(separator)
     .map((word) => (vocab.has(word) ? vocab.get(word) : word))
     .join(separator);
+
+
+    const map23213 = new Map();
+
+    const bank = {
+      levels: map23213,
+      levels2: new Map([
+        
+      ])
+    }
