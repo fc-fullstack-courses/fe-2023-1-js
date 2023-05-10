@@ -6,8 +6,10 @@
 // window.document
 // document
 
+let counter = 0;
+
 function btnAlert() {
-  alert('Hello World! We pressed the Button');
+  alert(++counter);
 }
 
 // const buttons = document.getElementsByTagName('button');
