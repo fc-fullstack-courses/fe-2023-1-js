@@ -6,14 +6,18 @@
 // window.document
 // document
 
-let counter = 0;
+function outerFunc() {
+  let counter = 0;
 
-function btnAlert() {
-  alert(++counter);
+  return function () {
+    alert(++counter);
+  };
 }
+
+const btnAlert = outerFunc();
 
 // const buttons = document.getElementsByTagName('button');
 const [firstButton] = document.getElementsByTagName('button');
 
 // target.addEventListener(type, listener);
-firstButton.addEventListener('click', btnAlert );
+firstButton.addEventListener('click', btnAlert);
