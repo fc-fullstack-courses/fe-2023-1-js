@@ -21,3 +21,12 @@ const [firstButton] = document.getElementsByTagName('button');
 
 // target.addEventListener(type, listener);
 firstButton.addEventListener('click', btnAlert);
+
+// пошук елементів
+const par = document.getElementById('par');
+
+const sections = document.getElementsByClassName('article-section');
+// const [firstButton] = document.getElementsByTagName('button');
+
+const par2 = document.querySelector('section.article-section > p#par');
+const paragraphs = document.querySelectorAll('body p');
