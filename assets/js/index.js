@@ -36,14 +36,24 @@ const img = document.querySelector('#wrong-h1+img');
 const span = document.querySelector('section > p > span');
 
 const btn = document.getElementById('btn');
+const root = document.getElementById('root');
+const body = document.body;
 
-function btnHandler() {
-  alert('You are subscribed to newsletter');
+function btnHandler(eventObject) {
+  // console.log(eventObject);
 
-  // btn.removeEventListener('click', btnHandler);
+  console.group();
+  // той на кого клікнули
+  console.log(eventObject.target); 
+  // той, на кому висть обробник події
+  console.log(eventObject.currentTarget);
+  console.groupEnd();
 }
 
-btn.addEventListener('click', btnHandler, { once: true });
+btn.addEventListener('click', btnHandler);
+root.addEventListener('click', btnHandler);
+body.addEventListener('click', btnHandler);
+window.addEventListener('click', btnHandler);
 
 // btn.addEventListener('click', () => {
 //   alert('You are subscribed to newsletter');
@@ -51,6 +61,6 @@ btn.addEventListener('click', btnHandler, { once: true });
 //   btn.removeEventListener('click', btnHandler);
 // });
 
-const fakeClick = new PointerEvent('click');
+// const fakeClick = new PointerEvent('click');
 
-btn.dispatchEvent(fakeClick);
+// btn.dispatchEvent(fakeClick);
