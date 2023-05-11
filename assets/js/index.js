@@ -35,7 +35,6 @@ const h1 = document.querySelector('.article > h1');
 const img = document.querySelector('#wrong-h1+img');
 const span = document.querySelector('section > p > span');
 
-const btn = document.getElementById('btn');
 const root = document.getElementById('root');
 const body = document.body;
 
@@ -67,10 +66,21 @@ const body = document.body;
 let counter = 0;
 
 const display = document.getElementById('display');
+const btn = document.getElementById('btn');
 
 function btnHandler(event) {
   display.textContent = `You have clicked ${++counter} times`;
+  // перезаписуємо стилі для тексту
+  // display.className = 'test';
+
+  // console.log(display.classList)
+
+  // додає класи до існуючих
+  display.classList.add('new-1','new-2');
+  // прибирає класи з елемента
+  display.classList.remove('class-1', 'new-2');
+  // "перемикає" клас
+  display.classList.toggle('bold');
 }
 
 btn.addEventListener('click', btnHandler);
-
