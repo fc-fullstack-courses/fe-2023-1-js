@@ -66,15 +66,10 @@ const body = document.body;
 
 let counter = 0;
 
+const display = document.getElementById('display');
+
 function btnHandler(event) {
-  const {
-    target: { textContent },
-  } = event;
-
-  // event.target.textContent = `You have clicked ${++counter} times`;
-  const button = event.target;
-
-  button.textContent = `You have clicked ${++counter} times`;
+  display.textContent = `You have clicked ${++counter} times`;
 }
 
 btn.addEventListener('click', btnHandler);
