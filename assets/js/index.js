@@ -50,3 +50,7 @@ btn.addEventListener('click', btnHandler, { once: true });
 
 //   btn.removeEventListener('click', btnHandler);
 // });
+
+const fakeClick = new PointerEvent('click');
+
+btn.dispatchEvent(fakeClick);
