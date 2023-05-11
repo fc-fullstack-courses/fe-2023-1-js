@@ -32,7 +32,6 @@ const btnAlert = outerFunc();
 // const paragraphs = document.querySelectorAll('body p');
 
 const h1 = document.querySelector('.article > h1');
-const img = document.querySelector('#wrong-h1+img');
 const span = document.querySelector('section > p > span');
 
 const root = document.getElementById('root');
@@ -67,6 +66,7 @@ let counter = 0;
 
 const display = document.getElementById('display');
 const btn = document.getElementById('btn');
+const img = document.querySelector('#wrong-h1+img');
 
 function btnHandler(event) {
   display.textContent = `You have clicked ${++counter} times`;
@@ -76,11 +76,18 @@ function btnHandler(event) {
   // console.log(display.classList)
 
   // додає класи до існуючих
-  display.classList.add('new-1','new-2');
+  display.classList.add('new-1', 'new-2');
   // прибирає класи з елемента
   display.classList.remove('class-1', 'new-2');
   // "перемикає" клас
   display.classList.toggle('bold');
+
+  // встановлюємо елементу в указаний атрибут
+  // вказане значення
+  img.setAttribute(
+    'src',
+    'https://e1.pxfuel.com/desktop-wallpaper/115/130/desktop-wallpaper-really-cute-backgrounds-on-markinternational-info-really-pretty-backgrounds-thumbnail.jpg'
+  );
 }
 
 btn.addEventListener('click', btnHandler);
