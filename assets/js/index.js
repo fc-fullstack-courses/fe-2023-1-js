@@ -39,21 +39,20 @@ const btn = document.getElementById('btn');
 const root = document.getElementById('root');
 const body = document.body;
 
-function btnHandler(eventObject) {
-  // console.log(eventObject);
+// function btnHandler(eventObject) {
+//   // console.log(eventObject);
 
-  console.group();
-  // той на кого клікнули
-  console.log(eventObject.target); 
-  // той, на кому висть обробник події
-  console.log(eventObject.currentTarget);
-  console.groupEnd();
-}
+//   console.group();
+//   // той на кого клікнули
+//   console.log(eventObject.target);
+//   // той, на кому висть обробник події
+//   console.log(eventObject.currentTarget);
+//   console.groupEnd();
+// }
 
-btn.addEventListener('click', btnHandler);
-root.addEventListener('click', btnHandler);
-body.addEventListener('click', btnHandler);
-window.addEventListener('click', btnHandler);
+// root.addEventListener('click', btnHandler);
+// body.addEventListener('click', btnHandler);
+// window.addEventListener('click', btnHandler);
 
 // btn.addEventListener('click', () => {
 //   alert('You are subscribed to newsletter');
@@ -64,3 +63,19 @@ window.addEventListener('click', btnHandler);
 // const fakeClick = new PointerEvent('click');
 
 // btn.dispatchEvent(fakeClick);
+
+let counter = 0;
+
+function btnHandler(event) {
+  const {
+    target: { textContent },
+  } = event;
+
+  // event.target.textContent = `You have clicked ${++counter} times`;
+  const button = event.target;
+
+  button.textContent = `You have clicked ${++counter} times`;
+}
+
+btn.addEventListener('click', btnHandler);
+
