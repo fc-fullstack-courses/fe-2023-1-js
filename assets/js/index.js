@@ -40,10 +40,10 @@ const btn = document.getElementById('btn');
 function btnHandler() {
   alert('You are subscribed to newsletter');
 
-  btn.removeEventListener('click', btnHandler);
+  // btn.removeEventListener('click', btnHandler);
 }
 
-btn.addEventListener('click', btnHandler);
+btn.addEventListener('click', btnHandler, { once: true });
 
 // btn.addEventListener('click', () => {
 //   alert('You are subscribed to newsletter');
