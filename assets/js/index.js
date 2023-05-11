@@ -16,17 +16,21 @@ function outerFunc() {
 
 const btnAlert = outerFunc();
 
-// const buttons = document.getElementsByTagName('button');
-const [firstButton] = document.getElementsByTagName('button');
-
-// target.addEventListener(type, listener);
-firstButton.addEventListener('click', btnAlert);
-
-// пошук елементів
-const par = document.getElementById('par');
-
-const sections = document.getElementsByClassName('article-section');
+// // const buttons = document.getElementsByTagName('button');
 // const [firstButton] = document.getElementsByTagName('button');
 
-const par2 = document.querySelector('section.article-section > p#par');
-const paragraphs = document.querySelectorAll('body p');
+// // target.addEventListener(type, listener);
+// firstButton.addEventListener('click', btnAlert);
+
+// // пошук елементів
+// const par = document.getElementById('par');
+
+// const sections = document.getElementsByClassName('article-section');
+// // const [firstButton] = document.getElementsByTagName('button');
+
+// const par2 = document.querySelector('section.article-section > p#par');
+// const paragraphs = document.querySelectorAll('body p');
+
+const h1 = document.querySelector('.article > h1');
+const img = document.querySelector('#wrong-h1+img');
+const span = document.querySelector('section > p > span');
