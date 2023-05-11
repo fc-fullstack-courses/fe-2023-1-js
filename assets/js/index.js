@@ -34,3 +34,19 @@ const btnAlert = outerFunc();
 const h1 = document.querySelector('.article > h1');
 const img = document.querySelector('#wrong-h1+img');
 const span = document.querySelector('section > p > span');
+
+const btn = document.getElementById('btn');
+
+function btnHandler() {
+  alert('You are subscribed to newsletter');
+
+  btn.removeEventListener('click', btnHandler);
+}
+
+btn.addEventListener('click', btnHandler);
+
+// btn.addEventListener('click', () => {
+//   alert('You are subscribed to newsletter');
+
+//   btn.removeEventListener('click', btnHandler);
+// });
