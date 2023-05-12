@@ -167,3 +167,16 @@ root.removeChild(display);
 // 2 елемент сам видаляє себе
 btn.remove();
 
+/*
+  створити кнопку, при натисканні на яку вона буде видалятися
+  * при видаленні кнопки не користуватися змінною, через яку її створювали
+*/
+
+const kamikazeBtn = document.createElement('button');
+kamikazeBtn.textContent = 'X';
+document.body.append(kamikazeBtn);
+
+kamikazeBtn.addEventListener('click', (event) => {
+  // kamikazeBtn.remove();
+  event.target.remove();
+});
