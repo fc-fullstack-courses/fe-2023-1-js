@@ -159,6 +159,10 @@ newElement.textContent = 'this element is generated in JS';
 // newElement.setAttribute('class', 'appended')
 // newElement.className = 'appended';
 newElement.classList.add('appended');
+
+newElement.id = 'appended';
+newElement.style.border = '5px solid black';
+
 root.append(newElement);
 
 // 1 видалити у батька
@@ -186,3 +190,14 @@ kamikazeBtn.addEventListener('click', (event) => {
 
 // отримання списку дітей
 // document.body.children;
+
+/*
+  створити базовий todo-list
+  по натисканню на кнопку запитати у користувача задачу
+  потім створити елменент з текстом задачі і розмістити його на сторінці
+
+  * поруч з текстом задачі розмістит кнопку delete
+    при натисканні на неї видалити задачу і кнопку
+*/
+
+const propmptText = prompt('explanation');
