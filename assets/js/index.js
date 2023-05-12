@@ -180,3 +180,9 @@ kamikazeBtn.addEventListener('click', (event) => {
   // kamikazeBtn.remove();
   event.target.remove();
 });
+
+// отримання батьківського елементу
+// document.body.parentElement;
+
+// отримання списку дітей
+// document.body.children;
