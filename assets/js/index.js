@@ -109,15 +109,22 @@ const switchBtn = document.querySelector('#switch');
 const animals = [
   {
     src: 'https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/story_full_width/qxyqxqjtu_WW187785.jpg',
-    alt: 'elephant',
+    alt: 'Elephant',
   },
   {
     src: 'https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8amlyYWZmZXxlbnwwfHwwfHw%3D&w=1000&q=80',
-    alt: 'jiraffe',
+    alt: 'Jiraffe',
   },
 ];
 
 // let currentAnimal = 0;
+
+const imageAlt = image.getAttributeNode('alt');
+const imageSrc = image.getAttributeNode('src');
+
+const imageTitle = document.createAttribute('title');
+imageTitle.value = 'this will be image title'
+image.setAttributeNode(imageTitle);
 
 switchBtn.addEventListener('click', (event) => {
   // if (currentAnimal === 0) {
@@ -131,10 +138,18 @@ switchBtn.addEventListener('click', (event) => {
   // image.setAttribute('src', animals[currentAnimal].src);
   // image.setAttribute('alt', animals[currentAnimal].alt);
 
-  const imageAlt = image.getAttribute('alt');
+  // const imageAlt = image.getAttribute('alt');
 
-  const nextAnimal = imageAlt === animals[0].alt ? animals[1] : animals[0];
 
-  image.setAttribute('src', nextAnimal.src);
-  image.setAttribute('alt', nextAnimal.alt);
+  // console.dir(imageAlt);
+
+  // const nextAnimal = imageAlt === animals[0].alt ? animals[1] : animals[0];
+
+  imageAlt.value =
+    imageAlt.value === animals[0].alt ? animals[1].alt : animals[0].alt;
+
+  imageSrc.value =
+    imageSrc.value === animals[0].src ? animals[1].src : animals[0].src;
+  // image.setAttribute('src', nextAnimal.src);
+  // image.setAttribute('alt', nextAnimal.alt);
 });
