@@ -123,7 +123,7 @@ const imageAlt = image.getAttributeNode('alt');
 const imageSrc = image.getAttributeNode('src');
 
 const imageTitle = document.createAttribute('title');
-imageTitle.value = 'this will be image title'
+imageTitle.value = 'this will be image title';
 image.setAttributeNode(imageTitle);
 
 switchBtn.addEventListener('click', (event) => {
@@ -140,7 +140,6 @@ switchBtn.addEventListener('click', (event) => {
 
   // const imageAlt = image.getAttribute('alt');
 
-
   // console.dir(imageAlt);
 
   // const nextAnimal = imageAlt === animals[0].alt ? animals[1] : animals[0];
@@ -153,3 +152,9 @@ switchBtn.addEventListener('click', (event) => {
   // image.setAttribute('src', nextAnimal.src);
   // image.setAttribute('alt', nextAnimal.alt);
 });
+
+const newElement = document.createElement('p');
+
+newElement.textContent = 'this element is generated in JS';
+
+root.append(newElement);
