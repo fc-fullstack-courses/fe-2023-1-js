@@ -13,3 +13,11 @@
   object-fit: cover;
   object-position: top;
 }
+
+.appended {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: darkgray;
+}

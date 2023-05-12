@@ -156,5 +156,7 @@ switchBtn.addEventListener('click', (event) => {
 const newElement = document.createElement('p');
 
 newElement.textContent = 'this element is generated in JS';
-
+// newElement.setAttribute('class', 'appended')
+// newElement.className = 'appended';
+newElement.classList.add('appended');
 root.append(newElement);
