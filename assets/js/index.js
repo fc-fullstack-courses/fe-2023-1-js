@@ -84,10 +84,57 @@ function btnHandler(event) {
 
   // встановлюємо елементу в указаний атрибут
   // вказане значення
-  img.setAttribute(
-    'src',
-    'https://e1.pxfuel.com/desktop-wallpaper/115/130/desktop-wallpaper-really-cute-backgrounds-on-markinternational-info-really-pretty-backgrounds-thumbnail.jpg'
-  );
+  // img.setAttribute(
+  //   'src',
+  //   'https://e1.pxfuel.com/desktop-wallpaper/115/130/desktop-wallpaper-really-cute-backgrounds-on-markinternational-info-really-pretty-backgrounds-thumbnail.jpg'
+  // );
 }
 
 btn.addEventListener('click', btnHandler);
+
+/*
+
+  У вас має бути картинка 
+  по натисканню кнопки змініть src та alt
+
+  * у вас буде змінна-масив, в якому зберігаються 
+  2 об'єкти з властивостями src та alt
+  при натисканні на кнопку змінювати на картинці
+  властивості між тими що є в масиві
+*/
+
+const image = document.querySelector('#img');
+const switchBtn = document.querySelector('#switch');
+
+const animals = [
+  {
+    src: 'https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/story_full_width/qxyqxqjtu_WW187785.jpg',
+    alt: 'elephant',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8amlyYWZmZXxlbnwwfHwwfHw%3D&w=1000&q=80',
+    alt: 'jiraffe',
+  },
+];
+
+// let currentAnimal = 0;
+
+switchBtn.addEventListener('click', (event) => {
+  // if (currentAnimal === 0) {
+  //   currentAnimal = 1;
+  // } else {
+  //   currentAnimal = 0;
+  // }
+
+  // currentAnimal = currentAnimal === 0 ? 1 : 0;
+
+  // image.setAttribute('src', animals[currentAnimal].src);
+  // image.setAttribute('alt', animals[currentAnimal].alt);
+
+  const imageAlt = image.getAttribute('alt');
+
+  const nextAnimal = imageAlt === animals[0].alt ? animals[1] : animals[0];
+
+  image.setAttribute('src', nextAnimal.src);
+  image.setAttribute('alt', nextAnimal.alt);
+});
