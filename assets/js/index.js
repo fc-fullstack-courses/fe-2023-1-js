@@ -160,3 +160,10 @@ newElement.textContent = 'this element is generated in JS';
 // newElement.className = 'appended';
 newElement.classList.add('appended');
 root.append(newElement);
+
+// 1 видалити у батька
+root.removeChild(display);
+
+// 2 елемент сам видаляє себе
+btn.remove();
+
