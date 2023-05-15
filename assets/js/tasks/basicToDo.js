@@ -13,9 +13,9 @@ const addTask = document.querySelector('.question-btn');
 const todoList = document.querySelector('.todo-list');
 // const deleteBtn = document.querySelector('.btn');
 
-function deleteHandler(event) {
-  event.target.parentElement.remove();
-}
+// function deleteHandler(event) {
+//   event.target.parentElement.remove();
+// }
 
 addTask.addEventListener('click', function () {
   const newTask = prompt('Write new task');
@@ -31,7 +31,7 @@ addTask.addEventListener('click', function () {
   const newButtonDelete = document.createElement('button');
   newButtonDelete.classList.add('btn');
   newButtonDelete.innerText = 'Delete';
-  newButtonDelete.addEventListener('click', deleteHandler);
+  // newButtonDelete.addEventListener('click', deleteHandler);
 
   const newElem = document.createElement('p');
   newElem.textContent = newTask;
@@ -40,3 +40,15 @@ addTask.addEventListener('click', function () {
   newSection.append(newElem, newButtonDelete);
   todoList.append(newSection);
 });
+
+
+function delegatedDelete (e) {
+  debugger;
+  if(e.target.tagName !== 'BUTTON') {
+    return;
+  }
+
+  e.target.parentElement.remove();
+}
+
+todoList.addEventListener('click', delegatedDelete);
