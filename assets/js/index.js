@@ -192,3 +192,23 @@ kamikazeBtn.addEventListener('click', (event) => {
 // document.body.children;
 
 // const propmptText = prompt('explanation');
+
+function clickHandler(e) {
+  console.log(e.currentTarget);
+}
+
+// btn
+switchBtn.addEventListener('click', clickHandler, { capture: false });
+
+// body
+document.body.addEventListener('click', clickHandler, { capture: true });
+
+// html
+// document.documentElement.addEventListener('click', clickHandler, {
+//   capture: false,
+// });
+document.documentElement.addEventListener('click', clickHandler, false);
+
+// browser
+// window.addEventListener('click', clickHandler, { capture: true });
+window.addEventListener('click', clickHandler, true);
