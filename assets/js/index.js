@@ -176,14 +176,14 @@ btn.remove();
   * при видаленні кнопки не користуватися змінною, через яку її створювали
 */
 
-const kamikazeBtn = document.createElement('button');
-kamikazeBtn.textContent = 'X';
-document.body.append(kamikazeBtn);
+// const kamikazeBtn = document.createElement('button');
+// kamikazeBtn.textContent = 'X';
+// document.body.append(kamikazeBtn);
 
-kamikazeBtn.addEventListener('click', (event) => {
-  // kamikazeBtn.remove();
-  event.target.remove();
-});
+// kamikazeBtn.addEventListener('click', (event) => {
+//   // kamikazeBtn.remove();
+//   event.target.remove();
+// });
 
 // отримання батьківського елементу
 // document.body.parentElement;
@@ -193,20 +193,20 @@ kamikazeBtn.addEventListener('click', (event) => {
 
 // const propmptText = prompt('explanation');
 
-function clickHandler(e) {
-  e.stopPropagation();
-  console.log(e.currentTarget);
-}
+// function clickHandler(e) {
+//   e.stopPropagation();
+//   console.log(e.currentTarget);
+// }
 
-function bodyClickHandler(e) {
-  console.log(e.currentTarget);
-}
+// function bodyClickHandler(e) {
+//   console.log(e.currentTarget);
+// }
 
-// btn
-switchBtn.addEventListener('click', clickHandler);
+// // btn
+// switchBtn.addEventListener('click', clickHandler);
 
-// body
-document.body.addEventListener('click', bodyClickHandler);
+// // body
+// document.body.addEventListener('click', bodyClickHandler);
 
 // html
 // document.documentElement.addEventListener('click', clickHandler, {
@@ -217,3 +217,24 @@ document.body.addEventListener('click', bodyClickHandler);
 // browser
 // window.addEventListener('click', clickHandler, { capture: true });
 // window.addEventListener('click', clickHandler, true);
+
+const form = document.querySelector('#form');
+
+form.addEventListener('submit', (e) => {
+  // для події submit target-ом є форма
+  const { target: formElement } = e;
+
+  // зупинити стандартну поведінку форми
+  e.preventDefault();
+
+  console.log(e);
+  console.dir(formElement);
+  
+  // у елемента форми всі інпути зберігаються в elements
+  // їх атрибути name є ключами відповідних властивостей
+  const { elements } = formElement;
+
+  // у кожного елемента форми можна отримати значення через
+  // властивість value
+  console.dir(elements.test.value);
+});
