@@ -194,21 +194,26 @@ kamikazeBtn.addEventListener('click', (event) => {
 // const propmptText = prompt('explanation');
 
 function clickHandler(e) {
+  e.stopPropagation();
+  console.log(e.currentTarget);
+}
+
+function bodyClickHandler(e) {
   console.log(e.currentTarget);
 }
 
 // btn
-switchBtn.addEventListener('click', clickHandler, { capture: false });
+switchBtn.addEventListener('click', clickHandler);
 
 // body
-document.body.addEventListener('click', clickHandler, { capture: true });
+document.body.addEventListener('click', bodyClickHandler);
 
 // html
 // document.documentElement.addEventListener('click', clickHandler, {
 //   capture: false,
 // });
-document.documentElement.addEventListener('click', clickHandler, false);
+// document.documentElement.addEventListener('click', clickHandler, false);
 
 // browser
 // window.addEventListener('click', clickHandler, { capture: true });
-window.addEventListener('click', clickHandler, true);
+// window.addEventListener('click', clickHandler, true);
