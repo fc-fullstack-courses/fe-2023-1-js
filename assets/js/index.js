@@ -90,7 +90,7 @@ function btnHandler(event) {
   // );
 }
 
-btn.addEventListener('click', btnHandler);
+// btn.addEventListener('click', btnHandler);
 
 /*
 
@@ -163,13 +163,13 @@ newElement.classList.add('appended');
 newElement.id = 'appended';
 newElement.style.border = '5px solid black';
 
-root.append(newElement);
+// root.append(newElement);
 
 // 1 видалити у батька
-root.removeChild(display);
+// root.removeChild(display);
 
 // 2 елемент сам видаляє себе
-btn.remove();
+// btn.remove();
 
 /*
   створити кнопку, при натисканні на яку вона буде видалятися
@@ -249,3 +249,35 @@ console.dir(bondLi);
 // всі користувацькі властивості data-*
 // скалаються в властивість dataset в camelCase
 console.log(bondLi.dataset.agentNumber);
+
+/*
+
+  є дів з параграфом тексту і кнопками, кожній з которих
+  відповідає колір
+  по натисканню на кнопку зробити колір тексту в параграфі 
+  відповідним кольором
+
+  використовувати data-* 
+
+
+  elem.style.backgroundColor = 'some color';
+  elem.style = 'background-color: some color;'
+*/
+
+const lorem = document.querySelector('#lorem');
+const btns = document.querySelectorAll('#root > button');
+
+function colorChangeHandler(e) {
+  const {
+    target: {
+      dataset: { color },
+    },
+  } = e;
+  // e.target.dataset.color
+
+  lorem.style.color = color;
+}
+
+for (const btn of btns) {
+  btn.addEventListener('click', colorChangeHandler);
+}
