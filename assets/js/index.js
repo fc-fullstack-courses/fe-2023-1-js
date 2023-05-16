@@ -229,7 +229,7 @@ form.addEventListener('submit', (e) => {
 
   console.log(e);
   console.dir(formElement);
-  
+
   // у елемента форми всі інпути зберігаються в elements
   // їх атрибути name є ключами відповідних властивостей
   const { elements } = formElement;
@@ -238,3 +238,14 @@ form.addEventListener('submit', (e) => {
   // властивість value
   console.dir(elements.test.value);
 });
+
+const bondLi = document.querySelector('#bond');
+
+console.dir(bondLi);
+
+// console.log(bondLi.attributes['data-agent-number']);
+// console.log(bondLi.getAttribute('data-agent-number'));
+
+// всі користувацькі властивості data-*
+// скалаються в властивість dataset в camelCase
+console.log(bondLi.dataset.agentNumber);
