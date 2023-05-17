@@ -23,6 +23,7 @@
 .commentWrapper {
   border: 1px solid lightgray;
   border-radius: 5px;
+  max-width: 800px;
 }
 
 .commentArticle {
@@ -54,7 +55,7 @@
   width: 100%;
   height: inherit;
   object-fit: cover;
-  object-position: 0 -20px;
+  /* object-position: 0 -20px; */
 }
 
 .commentBody {
