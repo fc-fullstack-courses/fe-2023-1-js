@@ -7,6 +7,8 @@ const responseData = [
     authorName: 'User Userenko',
     authorImg:
       'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress',
+    pros: ['cheap', 'efficient', 'feeds my cat'],
+    cons: ['bulky, cant place 2 of them in my house'],
   },
   {
     id: 2,
@@ -16,6 +18,12 @@ const responseData = [
     authorName: 'Null Undefinovich',
     authorImg:
       'https://img.freepik.com/premium-photo/young-ecuadorian-man-isolated-white-background-keeping-arms-crossed-frontal-position_1368-270514.jpg',
+    pros: [
+      'expensive',
+      'inefficient',
+      'my cat was so scared of that thing that he run off and wsa hiding for 4 days',
+    ],
+    cons: ['takes all space in room'],
   },
   {
     id: 3,
@@ -25,5 +33,15 @@ const responseData = [
     authorName: 'Jane Doe',
     authorImg:
       'https://media.istockphoto.com/id/1388899176/video/4k-video-footage-of-various-people-against-an-urban-background.jpg?b=1&s=640x640&k=20&c=8LhrexpSvHCyM1cH0c-tbt1f9pmHLUzmNxQ-sN04Glw=',
+    pros: [
+      'Lorem',
+      'Ipsum',
+      'Neque porro quisquam est, qui dolorem ipsum quia dolor',
+      'incididunt ut labore et dolore magna aliqua',
+    ],
+    cons: [
+      'because it is pleasure, but because those who do not know how to pursue',
+      'labore et dolore magnam aliquam quaerat voluptatem',
+    ],
   },
 ];
