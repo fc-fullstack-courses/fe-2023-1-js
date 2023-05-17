@@ -30,21 +30,14 @@ function createUserComment(comment) {
   authorName.classList.add('authorName');
   authorName.textContent = authorNameString;
 
-  const commentBody = document.createElement('div');
-  commentBody.classList.add('commentBody');
+  const commentTitle = createElement(
+    'h2',
+    { classNames: ['commentTitle'] },
+    title
+  );
 
-  const commentTitle = document.createElement('h2');
-  commentTitle.classList.add('commentTitle');
-  commentTitle.textContent = title;
+  const mark = createElement('p', { classNames: ['mark'] }, `${markText} / 10`);
 
-  const mark = document.createElement('p');
-  mark.classList.add('mark');
-  mark.textContent = `${markText} / 10`;
-
-  // const commentText = document.createElement('p');
-  // commentText.classList.add('commentText');
-  // commentText.textContent = text;
-  
   const commentText = createElement(
     'p',
     {
@@ -53,7 +46,13 @@ function createUserComment(comment) {
     text
   );
 
-  commentBody.append(commentTitle, mark, commentText);
+  const commentBody = createElement(
+    'div',
+    { classNames: ['commentBody'] },
+    commentTitle,
+    mark,
+    commentText
+  );
   authorData.append(imageWrapper, authorName);
   article.append(authorData, commentBody);
   liElement.append(article);
