@@ -24,14 +24,7 @@ function createUserComment(comment) {
   const authorData = document.createElement('div');
   authorData.classList.add('authorData');
 
-  const imageWrapper = document.createElement('div');
-  imageWrapper.classList.add('imageWrapper');
-
-  const image = document.createElement('img');
-  image.classList.add('authorImg');
-  // image.setAttribute('src', authorImg);
-  image.src = authorImg;
-  image.alt = authorNameString;
+  const imageWrapper = createImage({ src: authorImg, alt: authorNameString });
 
   const authorName = document.createElement('p');
   authorName.classList.add('authorName');
@@ -53,11 +46,25 @@ function createUserComment(comment) {
   commentText.textContent = text;
 
   commentBody.append(commentTitle, mark, commentText);
-  imageWrapper.append(image);
   authorData.append(imageWrapper, authorName);
   article.append(authorData, commentBody);
   liElement.append(article);
   return liElement;
+}
+
+function createImage({ src, alt }) {
+  const imageWrapper = document.createElement('div');
+  imageWrapper.classList.add('imageWrapper');
+
+  const image = document.createElement('img');
+  image.classList.add('authorImg');
+  // image.setAttribute('src', src);
+  image.src = src;
+  image.alt = alt;
+
+  imageWrapper.append(image);
+
+  return imageWrapper;
 }
 
 //    2.2 викликати функцію з 2.1 для кожного коментаря і зберігаємо результат
