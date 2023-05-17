@@ -41,9 +41,17 @@ function createUserComment(comment) {
   mark.classList.add('mark');
   mark.textContent = `${markText} / 10`;
 
-  const commentText = document.createElement('p');
-  commentText.classList.add('commentText');
-  commentText.textContent = text;
+  // const commentText = document.createElement('p');
+  // commentText.classList.add('commentText');
+  // commentText.textContent = text;
+  
+  const commentText = createElement(
+    'p',
+    {
+      classNames: ['commentText', 'anotherClass'],
+    },
+    text
+  );
 
   commentBody.append(commentTitle, mark, commentText);
   authorData.append(imageWrapper, authorName);
