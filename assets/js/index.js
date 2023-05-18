@@ -72,12 +72,33 @@ function countInterval() {
 function countTimeout() {
   let i = 0;
 
-  function callback () {
-    if(i < 20) {
+  function callback() {
+    if (i < 20) {
       console.log(++i);
-      setTimeout(callback,100);
+      setTimeout(callback, 100);
     }
   }
 
-  setTimeout(callback,100);
+  setTimeout(callback, 100);
 }
+
+const user = {
+  id: 0,
+  login: 'test2134',
+  phoneNumber: null,
+  friends: undefined,
+  logout: function () {
+    console.log('logout');
+  },
+};
+
+// створення JSON (серіалізація)
+const jsonUser = JSON.stringify(user);
+
+// отримання даних з JSON (десеріалізація)
+const restoredUser = JSON.parse(jsonUser);
+
+const obj = {};
+
+const objCopy = JSON.parse(JSON.stringify(obj));
+const objCopy2 = structuredClone(obj);
