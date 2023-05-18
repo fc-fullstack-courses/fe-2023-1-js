@@ -27,22 +27,57 @@ function callback2() {
 }
 
 // setTimeout повертає id таймера
-const timeout1 = setTimeout(callback2, 0);
-// зупинити таймер з певним id
-clearTimeout(timeout1);
+// const timeout1 = setTimeout(callback2, 0);
+// // зупинити таймер з певним id
+// clearTimeout(timeout1);
 
-const intervalId = setInterval(() => {
-  console.log('interval');
-}, 1000);
+// const intervalId = setInterval(() => {
+//   console.log('interval');
+// }, 1000);
 
 // clearInterval(intervalId);
 
 const ADMIN_PASSWORD = '12345';
 
-const intervalId2 = setInterval(() => {
-  const userPass = prompt('password');
+// const intervalId2 = setInterval(() => {
+//   const userPass = prompt('password');
 
-  if (userPass === ADMIN_PASSWORD) {
-    clearInterval(intervalId2);
+//   if (userPass === ADMIN_PASSWORD) {
+//     clearInterval(intervalId2);
+//   }
+// }, 5000);
+
+/*
+  Створити функцію, яка буде виводити в консоль числа
+  від 1 до 20 з проміжком часу між логіми в 100 мс
+
+  Можливі рішення через 
+    setInterval - if, clearInterval
+    setTimeout - рекурсія і if
+
+*/
+
+function countInterval() {
+  let i = 0;
+
+  const id = setInterval(() => {
+    console.log(++i);
+
+    if (i >= 20) {
+      clearInterval(id);
+    }
+  }, 100);
+}
+
+function countTimeout() {
+  let i = 0;
+
+  function callback () {
+    if(i < 20) {
+      console.log(++i);
+      setTimeout(callback,100);
+    }
   }
-}, 5000);
+
+  setTimeout(callback,100);
+}
