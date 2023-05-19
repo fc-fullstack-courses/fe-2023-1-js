@@ -102,3 +102,24 @@ const obj = {};
 
 const objCopy = JSON.parse(JSON.stringify(obj));
 const objCopy2 = structuredClone(obj);
+
+function someAsyncFunc() {
+  setTimeout(() => {
+    // дія 1
+    setTimeout(() => {
+      // дія 2
+      setTimeout(() => {
+        // 3
+        if (Math.random() > 0.5) {
+          setTimeout(() => {
+            // 4
+          }, 0);
+        } else {
+          setTimeout(() => {
+            // 5
+          }, 0);
+        }
+      }, 0);
+    }, 1000);
+  }, 1000);
+}
