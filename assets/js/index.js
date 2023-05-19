@@ -137,16 +137,21 @@ console.log(1);
 
 const promise = new Promise(executor);
 
-promise.then(
-  (fullfilledValue) => {
-    // виконується при успішному завершені промісу
-    console.log('promise fullfilled');
-    console.log(fullfilledValue);
-  },
-  (rejectedValue) => {
-    // запускається при відхиленні промісу
-    console.log(rejectedValue);
-  }
-);
+// promise.then(
+//   (fullfilledValue) => {
+//     // виконується при успішному завершені промісу
+//     console.log('promise fullfilled');
+//     console.log(fullfilledValue);
+//   },
+//   (rejectedValue) => {
+//     // запускається при відхиленні промісу
+//     console.log(rejectedValue);
+//   }
+// );
+
+promise.catch((rejectedValue) => {
+  // запускається при відхиленні промісу
+  console.log(rejectedValue);
+});
 
 console.log(3);
