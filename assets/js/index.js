@@ -127,7 +127,7 @@ function someAsyncFunc() {
 const executor = (resolve, reject) => {
   console.log(2);
   // кажемо що проміс виконано і резульат роботи - 10
-  setTimeout(() => resolve(10), 100);
+  setTimeout(() => resolve(10), 3000);
   // кажемо що проміс відхилено і резульат роботи - 'bad stuff happened'
   // при відхиленні промісу викидається помилка
   setTimeout(() => reject('bad stuff happened'), 10);
@@ -136,5 +136,17 @@ const executor = (resolve, reject) => {
 console.log(1);
 
 const promise = new Promise(executor);
+
+promise.then(
+  (fullfilledValue) => {
+    // виконується при успішному завершені промісу
+    console.log('promise fullfilled');
+    console.log(fullfilledValue);
+  },
+  (rejectedValue) => {
+    // запускається при відхиленні промісу
+    console.log(rejectedValue);
+  }
+);
 
 console.log(3);
