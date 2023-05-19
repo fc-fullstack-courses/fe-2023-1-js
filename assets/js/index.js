@@ -135,7 +135,7 @@ const executor = (resolve, reject) => {
 
 console.log(1);
 
-const promise = new Promise(executor);
+// const promise = new Promise(executor);
 
 // promise.then(
 //   (fullfilledValue) => {
@@ -149,9 +149,43 @@ const promise = new Promise(executor);
 //   }
 // );
 
-promise.catch((rejectedValue) => {
-  // запускається при відхиленні промісу
-  console.log(rejectedValue);
-});
+// promise.catch((rejectedValue) => {
+//   // запускається при відхиленні промісу
+//   console.log(rejectedValue);
+// });
 
 console.log(3);
+
+// const result = fetch('./../user.json');
+
+// const promise1 = result.then((response) => {
+//   // console.log(response);
+//   // const jsonPromise = response.json();
+
+//   // результат колбеку повертається у promise1
+//   return response.json();
+// });
+
+// const promise2 = promise1.then((users) => {
+//   console.table(users);
+
+//   return users.filter((user) => user.phoneNumber);
+// });
+
+// promise2.then((users) => {
+
+// })
+
+fetch('./../user.json')
+  .then((response) => response.json())
+  .then((users) => users.filter((user) => user.phoneNumber))
+  .then((userWithPhones) => {
+    console.table(userWithPhones);
+  });
+
+// fetch('./../user.json')
+//   .then((response) => response.json())
+//   .then((users) => users.filter((user) => user.phoneNumber))
+//   .then((userWithPhones) => {
+//     console.table(userWithPhones);
+//   });

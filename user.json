@@ -1,1 +1,5 @@
-{ "id": 0, "login": "test2134", "phoneNumber": null }
+[
+  { "id": 0, "login": "test2134", "phoneNumber": null },
+  { "id": 1, "login": "userUser", "phoneNumber": "054-361-75-57" },
+  { "id": 2, "login": "admin", "phoneNumber": "022-115-87-99" }
+]
