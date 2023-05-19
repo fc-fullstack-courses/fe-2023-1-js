@@ -176,12 +176,42 @@ console.log(3);
 
 // })
 
-fetch('./../user.json')
-  .then((response) => response.json())
-  .then((users) => users.filter((user) => user.phoneNumber))
-  .then((userWithPhones) => {
-    console.table(userWithPhones);
+fetch('./../usr.json')
+  .then(
+    (response) => {
+      console.log('then 1');
+      return response.json();
+    }
+    // (err) => {
+    //   console.log('error in 1 promise');
+    //   console.log(err);
+    // }
+  )
+  .then(
+    (users) => {
+      console.log('then 2');
+      return users.filter((user) => user.phoneNumber);
+    }
+    // (err) => {
+    //   console.log('error in 2 promise');
+    //   console.log(err);
+    //   return err;
+    // }
+  )
+  .then(
+    (userWithPhones) => {
+      console.log('then 3');
+      console.log(userWithPhones);
+    }
+    // (err) => {
+    //   console.log('error in 3 promise');
+    // }
+  )
+  .catch((err) => {
+    console.log('error happened somewhere');
+    console.log(err);
   });
+//   console.log(err);
 
 // fetch('./../user.json')
 //   .then((response) => response.json())
